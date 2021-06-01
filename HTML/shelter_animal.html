@@ -9,7 +9,7 @@
     <style>
         body {
             position: relative;
-            overflow-y: hidden;
+            overflow-y: auto;
         }
         
         img {
@@ -22,7 +22,7 @@
         }
         
         table {
-            position: fixed;
+            position: absolute;
             right: 350px;
         }
         
@@ -39,9 +39,15 @@
         }
         
         #sumit {
-            position: fixed;
-            bottom: 5px;
-            right: 750px;
+            position: absolute;
+            top: 500px;
+            right: 700px;
+        }
+        
+        #im {
+            position: absolute;
+            bottom: -600px;
+            left: 180px;
         }
     </style>
 </head>
@@ -77,24 +83,27 @@
                 <td align="right"><img src="shelter_animal-footb.png" style="width: 30%;"></td>
                 <td><select id="s2">
                     <option>請選擇------------------------------------------------------------</option>
-                    <option>新北市板橋區公立動物之家</option>
-                    <option>新北市中和區公立動物之家</option>
-                    <option>宜蘭縣流浪動物中途之家</option>
-                    <option>桃園市動物保護教育園區</option>
-                    <option>高雄市燕巢動物保護關愛園區</option>
-                    <option>高雄市壽山動物保護教育園區</option>
+                    <option>短毛貓</option>
+                    <option>米格魯</option>
+                    <option>馬爾濟斯</option>
+                    <option>鬆獅犬</option>
+                    <option>混種貓</option>
+                    <option>波斯貓</option>
                 </select></td>
-            </tr>
-            <tr>
-                <td align="right"><img src="shelter_animal-footc.png" style="width: 30%;"></td>
-                <td><textarea style="resize:none;width:450px;height:200px;"> </textarea ></td>
             </tr>
         </table>
         <div id="sumit">
             <input type="submit" value="查詢" style="width:100px;height:30px">
         </div>
-</div>
 
+    </div>
+    <div id="im">
+        <a href="#"><img src="shelter_animal-1.png" style="width: 17%;"> </a>
+        <a href="#"><img src="shelter_animal-2.png" style="width: 17%;"> </a>
+        <a href="#"><img src="shelter_animal-3.png" style="width: 17%;"> </a>
+        <a href="#"><img src="shelter_animal-4.png" style="width: 17%;"> </a>
+        <a href="#"><img src="shelter_animal-5.png" style="width: 17%;"> </a>
+    </div>
 </body>
 
 </html>
