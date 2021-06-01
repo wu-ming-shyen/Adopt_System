@@ -1,26 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            position: absolute;
+            left: 0px;
+            margin: 0;
+            padding: 0;
+        }
+        
+        img {
+            width: 50%;
+        }
+        
+        #vehicle2,
+        #vehicle3 {
+            transform: translateY(-20px);
+        }
+        
+        #s1 {
+            transform: translateY(-23px);
+            width: 20%;
+            height: 30px;
+            font-size: 20px;
+        }
+        
+        #s2 {
+            transform: translateY(-24px);
+            width: 30%;
+            height: 30px;
+            font-size: 20px;
+        }
+        
+        #s3 {
+            transform: translateY(-24px);
+            width: 20%;
+            height: 100px;
+            font-size: 20px;
+        }
+        
+        #so1 {
+            position: fixed;
+            left: 0px;
+            margin: 1%;
+        }
+        
+        #so2 {
+            position: fixed;
+            left: 0px;
+            margin: 1%;
+        }
+        
+        #so3 {
+            position: fixed;
+            left: 0px;
+            margin: 1%;
+        }
+    </style>
 </head>
+
 <body>
     <nav>
         <img src="shelter_animal_img/shelter_animal.png" style="display:block; margin:auto;">
     </nav>
-    <div style="text-align:center">
-        <h1>請輸入查詢資料</h1>
-        <div style="align-items: center">
-            <input type="checkbox" id="vehicle2" name="vehicle2" value="dog" style="width:50px;height:50px;">
-            <label for="vehicle2">狗</label><img src="shelter_animal_img/dog.svg" style="height: 100px;width: 100px;">
-            <input type="checkbox" id="vehicle3" name="vehicle3" value="cat" style="width:50px;height:50px;">
-            <label for="vehicle3">貓</label><img src="shelter_animal_img/cat.svg" style="height: 100px;width: 100px;"><br>
-            <input type="submit" value="Submit">
+    <div style="text-align:left">
+        <h2 style="text-align:center">請輸入查詢資料</h2>
+        <div style="text-align:center">
+            <input type="checkbox" id="vehicle2" name="vehicle2" value="dog" style="width:25px;height:25px;">
+            <img src="shelter_animal-dog.png" style="width: 8%;">
+            <input type="checkbox" id="vehicle3" name="vehicle3" value="cat" style="width:25px;height:25px;">
+            <img src="shelter_animal-cat.png" style="width: 8%;">
         </div>
-        
+        <div id="so1">
+            <img src="shelter_animal-foota.png" style="width: 15%;">
+            <select id="s1">
+                <option>請選擇</option>
+                <option>短毛貓</option>
+                <option>米格魯</option>
+                <option>馬爾濟斯</option>
+                <option>鬆獅犬</option>
+                <option>混種貓</option>
+                <option>波斯貓</option>
+            </select>
+        </div>
+        <div id="so2">
+            <img src="shelter_animal-footb.png" style="width: 15%;">
+            <select id="s2">
+                <option>請選擇</option>
+                <option>短毛貓</option>
+                <option>米格魯</option>
+                <option>馬爾濟斯</option>
+                <option>鬆獅犬</option>
+                <option>混種貓</option>
+                <option>波斯貓</option>
+            </select>
+        </div>
+        <div id="so3">
+            <img src="shelter_animal-footc.png" style="width: 15%;">
+            <textarea style="resize:none;width:450px;height:200px;"> </textarea >
+        </div>
+        <div id="sumit">
+            <input type="submit" value="查詢" style="width:100px;height:30px">
+        </div>
+
+
+
     </div>
-    
+
 </body>
+
 </html>
