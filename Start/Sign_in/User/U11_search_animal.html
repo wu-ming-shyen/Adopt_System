@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>貓狗領養系統</title>
+    <style>
+        body {
+            position: relative;
+            overflow-y: auto;
+        }
+        
+        img {
+            width: 50%;
+        }
+        
+        #vehicle2,
+        #vehicle3 {
+            transform: translateY(-20px);
+        }
+        
+        table {
+            position: absolute;
+            right: 350px;
+        }
+        
+        #s1 {
+            width: 30%;
+            height: 30px;
+            font-size: 16px;
+        }
+        
+        #s2 {
+            width: 100%;
+            height: 30px;
+            font-size: 16px;
+        }
+        
+        #sumit {
+            position: absolute;
+            top: 500px;
+            right: 700px;
+        }
+        
+        #im {
+            position: absolute;
+            bottom: -600px;
+            left: 180px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <img src="U01_user_UI/title.png" style="display:block; margin:auto;">
+    </nav>
+    <div style="text-align:center">
+        <h2>請輸入查詢資料</h2>
+        <div>
+            <input type="checkbox" id="vehicle2" name="vehicle2" value="dog" style="width:25px;height:25px;">
+            <img src="U11_search_animal/shelter_animal-dog.png" style="width: 8%;">
+            <input type="checkbox" id="vehicle3" name="vehicle3" value="cat" style="width:25px;height:25px;">
+            <img src="U11_search_animal/shelter_animal-cat.png" style="width: 8%;">
+        </div>
+        <table>
+            <tr>
+                <td align="right"><img src="U11_search_animal/shelter_animal-foota.png" style="width: 30%;"></td>
+                <td align="left">
+                    <select id="s1" align=right>
+                        <option>請選擇</option>
+                        <option>短毛貓</option>
+                        <option>米格魯</option>
+                        <option>馬爾濟斯</option>
+                        <option>鬆獅犬</option>
+                        <option>混種貓</option>
+                        <option>波斯貓</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td align="right"><img src="U11_search_animal/shelter_animal-footb.png" style="width: 30%;"></td>
+                <td><select id="s2">
+                    <option>請選擇------------------------------------------------------------</option>
+                    <option>短毛貓</option>
+                    <option>米格魯</option>
+                    <option>馬爾濟斯</option>
+                    <option>鬆獅犬</option>
+                    <option>混種貓</option>
+                    <option>波斯貓</option>
+                </select></td>
+            </tr>
+        </table>
+        <div id="sumit">
+            <input type="submit" value="查詢" style="width:100px;height:30px;margin: 30px;">
+        </div>
+
+    </div>
+    <div id="im">
+        <a href="#"><img src="U11_search_animal/shelter_animal-1.png" style="width: 17%;"> </a>
+        <a href="#"><img src="U11_search_animal/shelter_animal-2.png" style="width: 17%;"> </a>
+        <a href="#"><img src="U11_search_animal/shelter_animal-3.png" style="width: 17%;"> </a>
+        <a href="#"><img src="U11_search_animal/shelter_animal-4.png" style="width: 17%;"> </a>
+        <a href="#"><img src="U11_search_animal/shelter_animal-5.png" style="width: 17%;"> </a>
+    </div>
+</body>
+
+</html>
