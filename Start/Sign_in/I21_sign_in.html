@@ -45,10 +45,9 @@
             height: 50px;
             font-size: 25px;
         }
-        
-        button {
-            margin-top: 50px;
-            font-size: 25px;
+        input[type='submit']{
+            width: 100px;
+            height: 50px;
         }
     </style>
 </head>
@@ -60,13 +59,16 @@
         <img class="animal2" src="I21_sign_in_img/animal2.png" alt="">
     </nav>
     <main>
-        <br>
-        <h1>使用者帳號:</h1>
-        <input type="text">
-        <h1>使用者密碼:</h1>
-        <input type="text">
-        <br>
-        <button>登錄</button>
+        <form action="I21_sign_in.php" method="post">
+            <br>
+            <h1>使用者帳號:</h1>
+            <input type="text" name="U_Account">
+            <h1>使用者密碼:</h1>
+            <input type="text" name="U_Password">
+            <br>
+            <input type="submit" name="submit" value="登錄">
+        </form>
+        
     </main>
 </body>
 
