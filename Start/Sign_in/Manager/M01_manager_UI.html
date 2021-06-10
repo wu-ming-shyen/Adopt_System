@@ -7,6 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>貓狗領養系統</title>
     <style>
+        #in {
+            width: 100px;
+            height: 50px;
+            float: right;
+            margin: 50px;
+            font-size: 25px;
+        }
+        
         body {
             background-color: papayawhip;
         }
@@ -36,6 +44,7 @@
 <body>
     <nav>
         <img class="title" src="M01_manager_UI/title.png" alt="">
+        <input type="button" value="回首頁" onclick="self.location.href='../../index.html'" / id="in">
     </nav>
     <main>
         <br>
@@ -48,4 +57,5 @@
         <button type="button" onclick="location.href='M51_list_adopt.html'"><img src="M01_manager_UI/M51.png"></button>
     </main>
 </body>
+
 </html>
