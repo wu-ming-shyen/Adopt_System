@@ -1,50 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>貓狗領養系統</title>
     <style>
-        body{
+        body {
             background-color: papayawhip;
         }
-        nav{
+        
+        nav {
             margin: -10px;
             height: 250px;
-            text-align : center;
+            text-align: center;
             background-color: rgb(60, 100, 200);
         }
-        .title{
+        
+        .title {
             float: left;
             margin: 75px;
         }
-        .animal1{
+        
+        .animal1 {
             margin: 50px;
         }
-        .animal2{
+        
+        .animal2 {
             float: right;
             margin: 110px;
         }
-        main{
+        
+        main {
             font-size: 25px;
             color: rgb(150, 120, 25);
             margin-top: 100px;
             margin-left: 50px;
             text-align: center;
         }
-        input{
-            
+        
+        input {
             width: 500px;
             height: 50px;
             font-size: 25px;
         }
-        button{
+        
+        button {
+            margin-top: 50px;
+            font-size: 25px;
+        }
+        
+        input[type='submit'] {
+            width: 100px;
+            height: 50px;
             margin-top: 50px;
             font-size: 25px;
         }
     </style>
 </head>
+
 <body>
     <nav>
         <img class="title" src="I31_sign_up/title.png" alt="">
@@ -52,17 +67,20 @@
         <img class="animal2" src="I31_sign_up/animal2.png" alt="">
     </nav>
     <main>
-        <br>
-        <h1>使用者名稱:</h1>
-        <input type="text">
-        <h1>使用者Email:</h1>
-        <input type="text">
-        <h1>使用者密碼:</h1>
-        <input type="text">
-        <h1>再次確認密碼:</h1>
-        <input type="text">
-        <br>
-        <button>註冊</button>
+        <form action="I31_sign_up.php" method="post">
+            <br>
+            <h1>使用者名稱:</h1>
+            <input type="text" name="U_Name"><br>
+            <h1>使用者Email:</h1>
+            <input type="text" name="U_Email"><br>
+            <h1>使用者密碼:</h1>
+            <input type="text" name="U_Password1"><br>
+            <h1>再次確認密碼:</h1>
+            <input type="text" name="U_Password2"><br>
+            <br>
+            <input type="submit" name="submit" value="註冊">
+        </form>
     </main>
 </body>
+
 </html>
