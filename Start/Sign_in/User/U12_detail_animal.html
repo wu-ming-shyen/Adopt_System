@@ -1,67 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>貓狗領養系統</title>
     <style>
-        body{
+        body {
             background-color: papayawhip;
         }
-        nav{
-            text-align : center;
+        
+        nav {
+            text-align: center;
         }
-        main{
+        
+        main {
             margin: 0 auto;
-            text-align : center;
+            text-align: center;
         }
-        table,th,td{
+        
+        table,
+        th,
+        td {
             font-size: 30px;
             text-align: left;
             border: 2px solid black;
             border-collapse: collapse;
         }
-        th{
+        
+        th {
             width: 200px;
             height: 50px;
             font-size: 30px;
-            background-color:burlywood;
+            background-color: burlywood;
         }
-        td{
+        
+        td {
             width: 500px;
             height: 50px;
             font-size: 30px;
         }
-        input{
+        
+        input {
             width: 99.25%;
             height: 95%;
             margin-left: -2px;
             font-size: 30px;
         }
-        button{
+        
+        button {
             margin: 50px;
             font-size: 30px;
         }
-        #table1{
-            float:left;
+        
+        #table1 {
+            float: left;
             margin-left: 200px;
         }
-        #animal{
+        
+        #animal {
             width: 410px;
             height: 410px;
         }
+        
+        #in {
+            width: 100px;
+            height: 50px;
+            float: right;
+            margin: 50px;
+            font-size: 25px;
+        }
     </style>
 </head>
+
 <body>
     <nav>
-        <image class="title" src="U01_user_UI/title.png" alt=""><br>
-        <img src="U12_detail_animal/U12.png" alt="">
+        <image class="title" src="U01_user_UI/title.png" alt=""><input type="button" value="回首頁" onclick="self.location.href='../../index.html'" / id="in"><br>
+            <img src="U12_detail_animal/U12.png" alt="">
     </nav>
     <main>
-        <table  align="center" id="table1">
+        <table align="center" id="table1">
             <tr>
-                <td colspan="2" style="text-align: center;"><image src="U01_user_UI/animal.jpg" alt="" id="animal"></td>
+                <td colspan="2" style="text-align: center;">
+                    <image src="U01_user_UI/animal.jpg" alt="" id="animal">
+                </td>
             </tr>
             <tr>
                 <th>公告收容所:</th>
@@ -76,7 +99,7 @@
                 <td></td>
             </tr>
         </table>
-        <table  align="center" id="table2">
+        <table align="center" id="table2">
             <caption>詳細資料</caption>
             <tr>
                 <th>入所天數:</th>
@@ -119,8 +142,9 @@
                 <td></td>
             </tr>
         </table>
-        <button  onclick="location.href='U13_adopt_animal.html'">我要領養</button>
-        <button  onclick="location.href='U31_favorite_user.html'">加入我的最愛</button>
+        <button onclick="location.href='U13_adopt_animal.html'">我要領養</button>
+        <button onclick="location.href='U31_favorite_user.html'">加入我的最愛</button>
     </main>
 </body>
+
 </html>

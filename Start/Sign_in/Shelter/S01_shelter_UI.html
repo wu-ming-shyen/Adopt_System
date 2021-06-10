@@ -1,35 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>貓狗領養系統</title>
     <style>
-        body{
+        body {
             background-color: papayawhip;
         }
-        nav{
-            text-align : center;
+        
+        nav {
+            text-align: center;
         }
-        main{
-            text-align : center;
+        
+        main {
+            text-align: center;
         }
-        button{
+        
+        button {
             border: 0px;
             opacity: 0.8;
             margin: 30px;
             background-color: papayawhip;
         }
-        button:hover{
+        
+        button:hover {
             border: 3px black solid;
             opacity: 1.0;
         }
+        
+        #in {
+            width: 100px;
+            height: 50px;
+            float: right;
+            margin: 50px;
+            font-size: 25px;
+        }
     </style>
 </head>
+
 <body>
     <nav>
-        <img class="title" src="S01_shelter_UI/title.png" alt="">
+        <img class="title" src="S01_shelter_UI/title.png" alt=""><input type="button" value="回首頁" onclick="self.location.href='../../index.html'" / id="in">
     </nav>
     <main>
         <br>
@@ -37,4 +51,5 @@
         <button type="button" onclick="location.href='S21_data_shelter.html'"><img src="S01_shelter_UI/S21.png"></button>
     </main>
 </body>
+
 </html>
