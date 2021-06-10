@@ -1,74 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>貓狗領養系統</title>
     <style>
-        body{
+        body {
             background-color: papayawhip;
         }
-        nav{
-            text-align : center;
+        
+        nav {
+            text-align: center;
         }
-        main{
-            text-align : center;
+        
+        main {
+            text-align: center;
         }
-        table,th,td{
+        
+        table,
+        th,
+        td {
             margin-top: 50px;
             font-size: 30px;
             text-align: left;
             border: 2px solid black;
             border-collapse: collapse;
         }
-        th{
+        
+        th {
             width: 200px;
             height: 50px;
             font-size: 30px;
-            background-color:burlywood;
+            background-color: burlywood;
         }
-        td{
+        
+        td {
             width: 500px;
             height: 50px;
             font-size: 30px;
         }
-        input{
+        
+        input {
             width: 99.25%;
             height: 95%;
             margin-left: -2px;
             font-size: 30px;
         }
-        button{
+        
+        button {
             margin: 50px;
             font-size: 30px;
         }
-        #search{
+        
+        #search {
             width: 400px;
+        }
+        
+        #in {
+            width: 100px;
+            height: 50px;
+            float: right;
+            margin: 50px;
+            font-size: 25px;
         }
     </style>
 </head>
+
 <body>
     <nav>
-        <image src="M01_manager_UI/title.png" alt=""><br>
-        <image src="M01_manager_UI/M31.png" alt="">
-    <main>
-        <input type="text" id="search"><button>查詢</button>
-        <table  align="center">
-            <tr>
-                <th>會員名稱</th>
-                <td><input type="text" value=""></td>
-            </tr>
-            <tr>
-                <th>會員帳號</th>
-                <td><input type="text" value=""></td>
-            </tr>
-            <tr>
-                <th>會員密碼</th>
-                <td><input type="text" value=""></td>
-            </tr>
-        </table>
-        <button><b>修改</b></button>
-    </main>
+        <image src="M01_manager_UI/title.png" alt=""><input type="button" value="回首頁" onclick="self.location.href='../../index.html'" / id="in"><br>
+            <image src="M01_manager_UI/M31.png" alt="">
+                <main>
+                    <input type="text" id="search"><button>查詢</button>
+                    <table align="center">
+                        <tr>
+                            <th>會員名稱</th>
+                            <td><input type="text" value=""></td>
+                        </tr>
+                        <tr>
+                            <th>會員帳號</th>
+                            <td><input type="text" value=""></td>
+                        </tr>
+                        <tr>
+                            <th>會員密碼</th>
+                            <td><input type="text" value=""></td>
+                        </tr>
+                    </table>
+                    <button><b>修改</b></button>
+                </main>
 </body>
+
 </html>

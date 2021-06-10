@@ -1,34 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>貓狗領養系統</title>
     <style>
-        body{
+        body {
             background-color: papayawhip;
         }
-        nav{
-            text-align : center;
+        
+        nav {
+            text-align: center;
         }
-        main{
-            text-align : center;
+        
+        main {
+            text-align: center;
         }
-        button{
+        
+        button {
             width: 500px;
             height: 150px;
             margin: 50px;
         }
+        
+        #in {
+            width: 100px;
+            height: 50px;
+            float: right;
+            margin: 50px;
+            font-size: 25px;
+        }
     </style>
 </head>
+
 <body>
     <nav>
-        <image src="M01_manager_UI/title.png" alt=""><br>
-        <image src="M01_manager_UI/M51.png" alt="">
-    <main>
-        <button onclick="location.href='M52_check_adopt.html'">吳明軒</button><br>
-        <button onclick="location.href='M52_check_adopt.html'">吳雲聖</button>
-    </main>
+        <image src="M01_manager_UI/title.png" alt=""><input type="button" value="回首頁" onclick="self.location.href='../../index.html'" / id="in"><br>
+            <image src="M01_manager_UI/M51.png" alt="">
+                <main>
+                    <button onclick="location.href='M52_check_adopt.html'">吳明軒</button><br>
+                    <button onclick="location.href='M52_check_adopt.html'">吳雲聖</button>
+                </main>
 </body>
+
 </html>
