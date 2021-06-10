@@ -1,7 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <script>
+        function getCookie(name){
+            var match = document.cookie.match(new RegExp("(^| )"+name+"=([^;]*)(;|$)"));
+            if(match){
+                return 0;
+            }
+            else{
+                document.write('<meta http-equiv="refresh" content="0; url=../check.php">')
+            }
+        }
+        getCookie("user");
+    </script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,20 +41,22 @@
             border: 2px black solid;
             opacity: 1.0;
         }
-        
-        #in {
-            width: 100px;
-            height: 50px;
+
+        #test{
             float: right;
-            margin: 50px;
-            font-size: 25px;
         }
     </style>
 </head>
 
 <body>
     <nav>
-        <img class="title" src="U01_user_UI/title.png" alt=""><input type="button" value="回首頁" onclick="self.location.href='../../index.html'" / id="in">
+        <a href="../../index.html" id="test">回首頁</a>
+        <script>
+            var match = document.cookie.match(new RegExp("(^| )"+"user"+"=([^;]*)(;|$)"));
+            var a = match[0].replace(/user=/g, '').replace(/;/g, '').split('%')[0];
+            document.write('<a id="test">HI! '+a+'&nbsp;&nbsp;</a>');
+        </script>
+        <img class="title" src="U01_user_UI/title.png" alt="">
     </nav>
     <main>
         <br>
