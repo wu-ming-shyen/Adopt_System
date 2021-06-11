@@ -10,7 +10,7 @@
     $password = $_POST['U_Password'];
 
     include('../connect.php');
-    
+
     $sql = "SELECT `password` FROM `user` WHERE `email` = '$account'";
     $result=mysqli_query($connect,$sql);
     $sql2 = "SELECT `password` FROM `manager` WHERE `email` = '$account'";
