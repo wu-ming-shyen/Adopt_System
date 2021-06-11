@@ -16,9 +16,7 @@
     $sql3 = "SELECT `password` FROM `shelter` WHERE `email` = '$acount'";
     $reslut3=mysqli_query($connect,$sql3);
 
-    if($reslut){
-        echo "<script>alert('帳號或密碼錯誤!${reslut}');</script>";
-    }
+    
     if($reslut==$password && $password!=""){
         echo "<script>alert('帳號或密碼錯誤!1')</script>";
     }
