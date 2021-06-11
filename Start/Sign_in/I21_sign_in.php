@@ -25,7 +25,7 @@
         if($text[0]==$password && $password!=""){
             $_SESSION["admin"] = true;
             $_SESSION["acount"] = $account;
-            setcookie("url","https://180.177.192.220/Start/Sign_in/User/U01_user_UI.html",time()+3600);
+            setcookie("href","https://180.177.192.220/Start/Sign_in/User/U01_user_UI.html",time()+3600);
             header("refresh:0;url=check_in.php");
         }
     }

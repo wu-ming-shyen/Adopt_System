@@ -2,7 +2,8 @@
     session_start();
     if (isset($_SESSION["admin"]) && $_SESSION["admin"] === true) {
         setcookie("user",$_SESSION["acount"],time()+3600);
-        $url=parseurl($_COOKIE['url']);
+        $_COOKIE['href']=parseurl($_COOKIE['href']);
+        $url=$_COOKIE['href'];
         header("refresh:0;url=$url");
     } else {
         $_SESSION["admin"] = false;
