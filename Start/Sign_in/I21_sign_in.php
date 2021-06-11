@@ -8,7 +8,10 @@
 
     $account = $_POST['U_Account'];
     $password = $_POST['U_Password'];
-
+    if($account==""){
+        echo "<script>alert('請輸入帳號!');</script>";
+        header("refresh:0;url=I21_sign_in.html");
+    }
     include('../connect.php');
 
     $sql = "SELECT `password` FROM `user` WHERE `email` = '$account'";
@@ -22,7 +25,8 @@
         if($text[0]==$password && $password!=""){
             $_SESSION["admin"] = true;
             $_SESSION["acount"] = $account;
-            header("refresh:0;url=check.php");
+            setcookie("url","https://180.177.192.220/Start/Sign_in/User/U01_user_UI.html",time()+3600);
+            header("refresh:0;url=check_in.php");
         }
     }
     else if($text = mysqli_fetch_row($result2)){
