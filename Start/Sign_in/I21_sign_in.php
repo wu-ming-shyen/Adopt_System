@@ -21,7 +21,8 @@
     $sql3 = "SELECT `password` FROM `shelter` WHERE `email` = '$account'";
     $result3=mysqli_query($connect,$sql3);
     
-    if($text = mysqli_fetch_row($result)){
+    if(mysqli_num_rows($result)>0){
+        $text = mysqli_fetch_row($result);
         if($text[0]==$password && $password!=""){
             $_SESSION["admin"] = true;
             $_SESSION["acount"] = $account;
@@ -29,15 +30,22 @@
             header("refresh:0;url=check_in.php");
         }
     }
-    else if($text = mysqli_fetch_row($result2)){
+    else if(mysqli_num_rows($result2)>0){
+        $text = mysqli_fetch_row($result2);
         if($text[0]==$password && $password!=""){
-            session_destroy();
-            header("refresh:0;url=Manager/M01_manager_UI.html");
+            $_SESSION["admin"] = true;
+            $_SESSION["acount"] = $account;
+            setcookie("href","https://180.177.192.220/Start/Sign_in/Manager/M01_manager_UI.html",time()+3600);
+            header("refresh:0;url=check_in.php");
         }
     }
-    else if($text = mysqli_fetch_row($result3)){
+    else if(mysqli_num_rows($result3)>0){
+        $text = mysqli_fetch_row($result3);
         if($text[0]==$password && $password!=""){
-            header("refresh:0;url=Shelter/S01_shelter_UI.html");
+            $_SESSION["admin"] = true;
+            $_SESSION["acount"] = $account;
+            setcookie("href","https://180.177.192.220/Start/Sign_in/Shelter/S01_shelter_UI.html",time()+3600);
+            header("refresh:0;url=check_in.php");
         }
     }
     else{
