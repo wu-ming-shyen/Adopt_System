@@ -30,19 +30,11 @@
 <html lang="en">
 
 <head>
-    <script>
-        function getCookie(name){
-            var match = document.cookie.match(new RegExp(name+"=([^;]*)"));
-            if(match){
-                return 0;
-            }
-            else{
-                document.cookie = 'href='+location.href;
-                document.write('<meta http-equiv="refresh" content="0; url=../check_in.php">')
-            }
+    <?php
+        if($email == ""){
+            echo "<meta http-equiv='refresh' content='0; url=../check_in.php'>";
         }
-        getCookie("user");
-    </script>
+    ?>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -104,6 +96,11 @@
 
 <body>
     <nav>
+        <a href="../check_out.php" id="test" style="text-decoration:none;">&nbsp;登出</a>
+        <a href="U01_user_UI.html" id="test">回首頁</a>
+        <?php
+            echo "<a id=test>HI $U_Name</a>";
+        ?>
         <image class="title" src="U01_user_UI/title.png" alt=""><br>
         <image src="U01_user_UI/U21.png" alt=""></image>
     </nav>
@@ -117,7 +114,9 @@
             </tr>
             <tr>
                 <th>電子郵件</th>
-                <?php echo "<td><input type='text' value='$U_Email' name=U_Email></td>"; ?>
+                <td style="background-color: lightyellow;">
+                    <?php echo "$U_Email"; ?>
+                </td>
             </tr>
             <tr>
                 <th>密碼</th>
