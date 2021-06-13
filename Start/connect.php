@@ -1,3 +1,3 @@
 <?php
-    $connect = new mysqli("180.177.192.220","test","test","sad");
+    $connect = new mysqli("127.0.0.1","root","","sad");
 ?>
