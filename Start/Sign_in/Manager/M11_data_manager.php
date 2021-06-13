@@ -97,7 +97,7 @@
 <body>
     <nav>
         <a href="../check_out.php" id="test" style="text-decoration:none;">&nbsp;登出</a>
-        <a href="U01_user_UI.html" id="test">回首頁</a>
+        <a href="M01_manager_UI.html" id="test">回首頁</a>
         <?php
             echo "<a id=test>HI $M_Name</a>";
         ?>
@@ -105,7 +105,7 @@
         <image src="M01_manager_UI/M11.png" alt=""></image>
     </nav>
     <main>
-        <form action="update.php" method="POST">
+        <form action="Manager_Update.php" method="POST">
         <?php echo "<input type='hidden' value='$email' name='email'>"; ?>
         <table align="center">
             <tr>
@@ -145,7 +145,8 @@
                 </td>
             </tr>
         </table>
-        <button><b>送出</b></button>
+        <input type="submit" value="送出修改">
+        </form>
     </main>
 </body>
 

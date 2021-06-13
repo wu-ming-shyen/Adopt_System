@@ -12,16 +12,20 @@
         return $url;
     }
     
-    $sql = "SELECT * FROM `shelter` WHERE `email` = '$email'";
+    $sql = "SELECT * FROM `manager` WHERE `email` = '$email'";
     $result = mysqli_query($connect,$sql);
     for($i=1; $i <= mysqli_num_rows($result);$i++){
         $text = mysqli_fetch_row($result);
-        $S_Name = $text[1];
-        $S_Email = $text[2];
-        $S_Password = $text[3];
-        $S_Phone = $text[4];
-        $S_Address = $text[5];
+        $M_Name = $text[1];
+        $M_Email = $text[2];
+        $M_Password = $text[3];
+        $M_Birthday = $text[4];
+        $M_Phone = $text[5];
+        $M_ID_Number = $text[6];
+        $M_Sex = $text[7];
+        $M_Address = $text[8];
     }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -79,10 +83,14 @@
             font-size: 30px;
         }
         
+        #search {
+            width: 400px;
+        }
+        
         input[type="submit"] {
             margin-top: 50px;
             font-size: 30px;
-            width: 250px;
+            width: 200px;
         }
         
         #test{
@@ -95,38 +103,48 @@
 <body>
     <nav>
         <a href="../check_out.php" id="test" style="text-decoration:none;">&nbsp;登出</a>
-        <a href="S01_shelter_UI.html" id="test">回首頁</a>
+        <a href="M01_manager_UI.html" id="test">回首頁</a>
         <?php
-            echo "<a id=test>HI $S_Name</a>";
+            echo "<a id=test>HI $M_Name</a>";
         ?>
-        <image src="S01_shelter_UI/title.png" alt=""><br>
-        <image src="S01_shelter_UI/S21.png" alt="">
+        <image src="M01_manager_UI/title.png" alt=""><br>
+        <image src="M01_manager_UI/M31.png" alt="">
     </nav>
     <main>
-        <form action="update.php" method="POST">
-        <?php echo "<input type='hidden' value='$email' name='email'>"; ?>
+        <form action="search.php" method="POST">
+            <input type="text" name="email" style="width: 400px;">
+            <input type="submit" value="查詢" style="margin-left: 30px;">
+        </form>
+
+        <?php
+            if(isset($_POST['U_Email'])){
+                $U_Name = $_POST['U_Name'];
+                $U_Email = $_POST['U_Email'];
+                $U_Password = $_POST['U_Password'];
+            }
+            else{
+                $U_Name = "";
+                $U_Email = "";
+                $U_Password = "";
+            }
+        ?>
+
+        <form action="User_Update.php" method="POST">
+        <?php echo "<input type='hidden' value='$U_Email' name='U_Email'>"; ?>
         <table align="center">
             <tr>
-                <th>收容所名稱:</th>
-                <?php echo "<td><input type='text' value='$S_Name' name=S_Name></td>"; ?>
+                <th>會員名稱</th>
+                <?php echo "<td><input type='text' value='$U_Name' name=U_Name></td>"; ?>
             </tr>
             <tr>
-                <th>收容所Email</th>
+                <th>會員帳號</th>
                 <td style="background-color: lightyellow;">
-                    <?php echo "$S_Email"; ?>
+                    <?php echo "$U_Email"; ?>
                 </td>
             </tr>
             <tr>
-                <th>收容所密碼:</th>
-                <?php echo "<td><input type='text' value='$S_Password' name=S_Password></td>"; ?>
-            </tr>
-            <tr>
-                <th>收容所電話:</th>
-                <?php echo "<td><input type='text' value='$S_Phone' name=S_Phone></td>"; ?>
-            </tr>
-            <tr>
-                <th>收容所住址:</th>
-                <?php echo "<td><input type='text' value='$S_Address' name=S_Address></td>"; ?>
+                <th>會員密碼</th>
+                <?php echo "<td><input type='text' value='$U_Password' name=U_Password></td>"; ?>
             </tr>
         </table>
         <input type="submit" value="送出修改">
