@@ -68,6 +68,16 @@
             float: right;
             text-decoration:none;
         }
+        input[type="submit"] {
+            margin-top: 150px;
+            font-size: 30px;
+            width: 150px;
+        }
+        input[type="button"] {
+            margin-top: 150px;
+            font-size: 30px;
+            width: 150px;
+        }
     </style>
 </head>
 
@@ -86,70 +96,86 @@
     </nav>
     <main>
         <?php
+            header("Content-Type: text/html; charset=utf8");
+            include('../../connect.php');
+            mysqli_query($connect,"SET NAMES 'UTF8'");
+            $email = parseurl($_COOKIE['user']);
+
+            function parseurl($url=""){
+                $url = rawurlencode(mb_convert_encoding($url, 'gb2312', 'utf-8'));
+                $a = array("%3A", "%2F", "%40");
+                $b = array(":", "/", "@");
+                $url = str_replace($a, $b, $url);
+                return $url;
+            }
+
+            $shelter="SELECT * FROM `shelter` WHERE `email` = '$email'";
+            $result=mysqli_query($connect,$shelter);
+            $shelter_data=mysqli_fetch_row($result);
+
         ?>
-        <table align="center" id="table1">
-            <tr>
-                <td colspan="2" style="text-align: center;">
-                    <image src="S01_shelter_UI/animal.jpg" alt="" id="animal">
-                </td>
-            </tr>
-            <tr>
-                <th>公告收容所:</th>
-                <td><input type="text" value=""></td>
-            </tr>
-            <tr>
-                <th>收容所電話:</th>
-                <td><input type="text" value=""></td>
-            </tr>
-            <tr>
-                <th>收容所地址:</th>
-                <td><input type="text" value=""></td>
-            </tr>
-        </table>
-        <table align="center" id="table2">
-            <caption>詳細資料</caption>
-            <tr>
-                <th>入所天數:</th>
-                <td><input type="text" value=""></td>
-            </tr>
-            <tr>
-                <th>入所日期:</th>
-                <td><input type="text" value=""></td>
-            </tr>
-            <tr>
-                <th>是否開放領養:</th>
-                <td><input type="text" value=""></td>
-            </tr>
-            <tr>
-                <th>收容編號:</th>
-                <td><input type="text" value=""></td>
-            </tr>
-            <tr>
-                <th>來源行政區:</th>
-                <td><input type="text" value=""></td>
-            </tr>
-            <tr>
-                <th>動物別:</th>
-                <td><input type="text" value=""></td>
-            </tr>
-            <tr>
-                <th>動物品種:</th>
-                <td><input type="text" value=""></td>
-            </tr>
-            <tr>
-                <th>毛色:</th>
-                <td><input type="text" value=""></td>
-            </tr>
-            <tr>
-                <th>動物性別:</th>
-                <td><input type="text" value=""></td>
-            </tr>
-            <tr>
-                <th>動物名:</th>
-                <td><input type="text" value=""></td>
-            </tr>
-        </table>
+        <form action="insert_animal.php" method="POST">
+            <table align="center" id="table1">
+                <tr>
+                    <th>入所日期:</th>
+                    <td><input type="date" name="time"></td>
+                </tr>
+                <tr>
+                    <th>是否開放領養:</th>
+                    <td><input type="text" name="adopt"></td>
+                </tr>
+                <tr>
+                    <th>來源行政區:</th>
+                    <td><input type="text" name="fromwhere"></td>
+                </tr>
+                <tr>
+                    <th>動物別:</th>
+                    <td><input type="text" name="genus"></td>
+                </tr>
+                <tr>
+                    <th>動物品種:</th>
+                    <td><input type="text" name="species"></td>
+                </tr>
+                <tr>
+                    <th>毛色:</th>
+                    <td><input type="text" name="color"></td>
+                </tr>
+                <tr>
+                    <th>動物性別:</th>
+                    <td><input type="text" name="sex"></td>
+                </tr>
+                <tr>
+                    <th>動物名:</th>
+                    <td><input type="text" value=""></td>
+                </tr>
+            </table>
+            <table align="center" id="table2">
+                <tr>
+                    <th>年齡:</th>
+                    <td><input type="text" name="age"></td>
+                </tr>
+                <tr>
+                    <th>圖片連結:</th>
+                    <td><input type="text" name="img"></td>
+                </tr>
+                <tr>
+                    <th>公告收容所:</th>
+                    <?php echo "<td>$shelter_data[1]</td>";?>
+                </tr>
+                <tr>
+                    <th>收容所電話:</th>
+                    <?php echo "<td>$shelter_data[4]</td>";?>
+                </tr>
+                <tr>
+                    <th>收容所地址:</th>
+                    <?php echo "<td>$shelter_data[5]</td>";?>
+                </tr>
+            </table>
+            <input type="submit" value="新增">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <form>
+        <input type="button" value="維護貓狗" onclick="location.href='S11_data_animal2.php?animal=請選擇'">
     </main>
+    
 </body>
 
 </html>
