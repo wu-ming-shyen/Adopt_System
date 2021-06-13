@@ -64,22 +64,29 @@
             height: 410px;
         }
         
-        #in {
-            width: 100px;
-            height: 50px;
+        #test{
             float: right;
-            margin: 50px;
-            font-size: 25px;
+            text-decoration:none;
         }
     </style>
 </head>
 
 <body>
     <nav>
-        <image src="S01_shelter_UI/title.png" alt=""><input type="button" value="回首頁" onclick="self.location.href='../../index.html'" / id="in"><br>
-            <image src="S01_shelter_UI/S11.png" alt="">
+        <a href="../check_out.php" id="test">&nbsp;登出</a>
+        <a href="S01_shelter_UI.html" id="test">回首頁</a>
+        
+        <script>
+            var match = document.cookie.match(new RegExp("user"+"=([^;]*)"));
+            var a = match[0].replace(/user=/g, '').replace(/;/g, '').split('%')[0];
+            document.write('<a id="test">HI! '+a+'&nbsp;&nbsp;</a>');
+        </script>
+        <image src="S01_shelter_UI/title.png" alt="">
+        <image src="S01_shelter_UI/S11.png" alt="">
     </nav>
     <main>
+        <?php
+        ?>
         <table align="center" id="table1">
             <tr>
                 <td colspan="2" style="text-align: center;">
