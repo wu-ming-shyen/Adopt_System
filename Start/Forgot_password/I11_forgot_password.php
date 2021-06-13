@@ -13,10 +13,10 @@
     
     if(!$reslut){
         echo "<script>alert('註冊失敗(可能帳號已有人使用)');</script>";
-        header("refresh:0;url=signup.html");
+        header("refresh:0;url=I11_forgot_password.html");
     }else{
         echo "<script>alert('註冊成功');</script>";
-        header("refresh:0;url=login.html");
+        header("refresh:0;url=../Sign_up/I21_sign_in.html");
     }
     
     mysqli_close($connect);
