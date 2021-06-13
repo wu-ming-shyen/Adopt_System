@@ -13,7 +13,7 @@
         header("refresh:0;url=I21_sign_in.html");
     }
     include('../connect.php');
-
+    mysqli_query($connect,"SET NAMES 'UTF8'");
     $sql = "SELECT `password` FROM `user` WHERE `email` = '$account'";
     $result=mysqli_query($connect,$sql);
     $sql2 = "SELECT `password` FROM `manager` WHERE `email` = '$account'";
@@ -26,8 +26,12 @@
         if($text[0]==$password && $password!=""){
             $_SESSION["admin"] = true;
             $_SESSION["acount"] = $account;
-            setcookie("href","https://180.177.192.220/Start/Sign_in/User/U01_user_UI.html",time()+3600);
+            echo "<script>document.cookie = 'href='+'https://180.177.192.220/Start/Sign_in/User/U01_user_UI.html';</script>";
             header("refresh:0;url=check_in.php");
+        }
+        else{
+            echo "<script>alert('帳號或密碼錯誤!');</script>";
+            header("refresh:0;url=I21_sign_in.html");
         }
     }
     else if(mysqli_num_rows($result2)>0){
@@ -35,8 +39,12 @@
         if($text[0]==$password && $password!=""){
             $_SESSION["admin"] = true;
             $_SESSION["acount"] = $account;
-            setcookie("href","https://180.177.192.220/Start/Sign_in/Manager/M01_manager_UI.html",time()+3600);
+            echo "<script>document.cookie = 'href='+'https://180.177.192.220/Start/Sign_in/Manager/M01_manager_UI.html';</script>";
             header("refresh:0;url=check_in.php");
+        }
+        else{
+            echo "<script>alert('帳號或密碼錯誤!');</script>";
+            header("refresh:0;url=I21_sign_in.html");
         }
     }
     else if(mysqli_num_rows($result3)>0){
@@ -44,8 +52,12 @@
         if($text[0]==$password && $password!=""){
             $_SESSION["admin"] = true;
             $_SESSION["acount"] = $account;
-            setcookie("href","https://180.177.192.220/Start/Sign_in/Shelter/S01_shelter_UI.html",time()+3600);
+            echo "<script>document.cookie = 'href='+'https://180.177.192.220/Start/Sign_in/Shelter/S01_shelter_UI.html';</script>";
             header("refresh:0;url=check_in.php");
+        }
+        else{
+            echo "<script>alert('帳號或密碼錯誤!');</script>";
+            header("refresh:0;url=I21_sign_in.html");
         }
     }
     else{

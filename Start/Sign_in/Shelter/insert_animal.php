@@ -45,7 +45,7 @@
             header("refresh:0;url=S11_data_animal.php");
         }
         else{
-            echo "<script>alert('修改成功');</script>";
+            echo "<script>alert('新增成功');</script>";
             header("refresh:0;url=S11_data_animal.php");
         }
     }
