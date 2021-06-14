@@ -226,7 +226,7 @@
                     if(mysqli_num_rows($result2)==1){
                         $text = mysqli_fetch_row($result2);
                         echo "<tr class='t2'>";
-                        echo "<td><img src='".$text[7]."'></td>";
+                        echo "<td><img src='".$text[5]."'style='width:400px;'></td>";
                         echo "<td class='t3'>$text[1]</td>";
                         echo "<td class='t3'>$text[2]</td>";
                         echo "<td class='t3'>$text[3]</td>";
@@ -237,7 +237,7 @@
                     }
                     while ($row = mysqli_fetch_array($result2, mysqli_num_rows($result2))){
                         echo "<tr class='t2'>";
-                        echo "<td><img src='".$row[7]."'></td>";
+                        echo "<td><img src='".$row[5]."'style='width:400px;'></td>";
                         echo "<td class='t3'>$row[1]</td>";
                         echo "<td class='t3'>$row[2]</td>";
                         echo "<td class='t3'>$row[3]</td>";
@@ -266,7 +266,7 @@
                     if(mysqli_num_rows($result2)==1){
                         $text = mysqli_fetch_row($result2);
                         echo "<tr class='t2'>";
-                        echo "<td><img src='".$text[7]."'></td>";
+                        echo "<td><img src='".$text[5]."'style='width:400px;'></td>";
                         echo "<td class='t3'>$text[1]</td>";
                         echo "<td class='t3'>$text[2]</td>";
                         echo "<td class='t3'>$text[3]</td>";
@@ -277,7 +277,7 @@
                     }
                     while ($row = mysqli_fetch_array($result2, mysqli_num_rows($result2))){
                         echo "<tr class='t2'>";
-                        echo "<td><img src='".$row[7]."'></td>";
+                        echo "<td><img src='".$row[5]."'style='width:400px;'></td>";
                         echo "<td class='t3'>$row[1]</td>";
                         echo "<td class='t3'>$row[2]</td>";
                         echo "<td class='t3'>$row[3]</td>";
@@ -301,11 +301,11 @@
                 echo "<tr class='t4'><th>照片</th><th>類別</th><th>品種</th><th>性別</th><th>年齡</th><th>來自</th><th>詳細資料</th></tr>";
                 if(mysqli_num_rows($result)==1){
                     $text = mysqli_fetch_row($result);
-                    $sql2 = "SELECT `name` FROM `shelter` WHERE `id` = '$text[9]'";
+                    $sql2 = "SELECT `name` FROM `shelter` WHERE `id` = '$text[11]'";
                     $result2 = mysqli_query($connect,$sql2);
                     $text2 = mysqli_fetch_row($result2);
                     echo "<tr class='t2'>";
-                    echo "<td><img src='".$text[7]."'></td>";
+                    echo "<td><img src='".$text[5]."'style='width:400px;'></td>";
                     echo "<td class='t3'>$text[1]</td>";
                     echo "<td class='t3'>$text[2]</td>";
                     echo "<td class='t3'>$text[3]</td>";
@@ -315,11 +315,11 @@
                     echo "</tr>";
                 }
                 while ($row = mysqli_fetch_array($result, mysqli_num_rows($result))){
-                    $sql2 = "SELECT `name` FROM `shelter` WHERE `id` = '$text[9]'";
+                    $sql2 = "SELECT `name` FROM `shelter` WHERE `id` = '$text[11]'";
                     $result2 = mysqli_query($connect,$sql2);
                     $text2 = mysqli_fetch_row($result2);
                     echo "<tr class='t2'>";
-                    echo "<td><img src='".$row[7]."'></td>";
+                    echo "<td><img src='".$row[5]."'style='width:400px;'></td>";
                     echo "<td class='t3'>$row[1]</td>";
                     echo "<td class='t3'>$row[2]</td>";
                     echo "<td class='t3'>$row[3]</td>";
