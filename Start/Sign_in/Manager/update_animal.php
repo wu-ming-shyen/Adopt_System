@@ -29,17 +29,17 @@
 
     if(!$result2){
         echo "<script>alert('ERROR');</script>";
-        echo "<script>location.href='S11_data_animal2.php?animal=請選擇'</script>";
+        echo "<script>location.href='M21_data_animal.php?shelter=請選擇'</script>";
     }else{
         $sql2 = "UPDATE `contain` SET `time` = '$time' WHERE `a_id` = '$id'";
         $result4=mysqli_query($connect,$sql2);
         if(!$result4){
             echo "<script>alert('ERROR');</script>";
-            echo "<script>location.href='S11_data_animal2.php?animal=請選擇'</script>";
+            echo "<script>location.href='M21_data_animal.php?shelter=請選擇'</script>";
         }
         else{
             echo "<script>alert('修改成功');</script>";
-            echo "<script>location.href='S11_data_animal2.php?animal=請選擇'</script>";
+            echo "<script>location.href='M21_data_animal.php?shelter=請選擇'</script>";
         }
     }
 
