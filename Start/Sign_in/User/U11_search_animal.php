@@ -232,10 +232,10 @@
                         echo "<td class='t3'>$text[3]</td>";
                         echo "<td class='t3'>$text[4]</td>";
                         echo "<td class='t5'>$shelter</td>";
-                        echo "<td class='t3'><form action='' method='post'><input type='submit' name='submit' value='查看'></form></td>";
+                        echo "<td class='t3'><form action='U12_detail_animal.php' method='post'><input type='hidden' name='a_id' value='$row[0]'><input type='submit' name='submit' value='查看'></form></td>";
                         echo "</tr>";
                     }
-                    while ($row = mysqli_fetch_array($result2, mysqli_num_rows($result2))){
+                    while ($row = mysqli_fetch_array($result2)){
                         echo "<tr class='t2'>";
                         echo "<td><img src='".$row[5]."'style='width:400px;'></td>";
                         echo "<td class='t3'>$row[1]</td>";
@@ -243,7 +243,7 @@
                         echo "<td class='t3'>$row[3]</td>";
                         echo "<td class='t3'>$row[4]</td>";
                         echo "<td class='t5'>$shelter</td>";
-                        echo "<td class='t3'><form action='' method='post'><input type='submit' name='submit' value='查看'></form></td>";
+                        echo "<td class='t3'><form action='U12_detail_animal.php' method='post'><input type='hidden' name='a_id' value='$row[0]'><input type='submit' name='submit' value='查看'></form></td>";
                         echo "</tr>";
                     }
                     echo "</table>";
@@ -272,10 +272,10 @@
                         echo "<td class='t3'>$text[3]</td>";
                         echo "<td class='t3'>$text[4]</td>";
                         echo "<td class='t5'>$shelter</td>";
-                        echo "<td class='t3'><form action='' method='post'><input type='submit' name='submit' value='查看'></form></td>";
+                        echo "<td class='t3'><form action='U12_detail_animal.php' method='post'><input type='hidden' name='a_id' value='$text[0]'><input type='submit' name='submit' value='查看'></form></td>";
                         echo "</tr>";
                     }
-                    while ($row = mysqli_fetch_array($result2, mysqli_num_rows($result2))){
+                    while ($row = mysqli_fetch_array($result2)){
                         echo "<tr class='t2'>";
                         echo "<td><img src='".$row[5]."'style='width:400px;'></td>";
                         echo "<td class='t3'>$row[1]</td>";
@@ -283,7 +283,7 @@
                         echo "<td class='t3'>$row[3]</td>";
                         echo "<td class='t3'>$row[4]</td>";
                         echo "<td class='t5'>$shelter</td>";
-                        echo "<td class='t3'><form action='' method='post'><input type='submit' name='submit' value='查看'></form></td>";
+                        echo "<td class='t3'><form action='U12_detail_animal.php' method='post'><input type='hidden' name='a_id' value='$row[0]'><input type='submit' name='submit' value='查看'></form></td>";
                         echo "</tr>";
                     }
                     echo "</table>";
@@ -311,21 +311,21 @@
                     echo "<td class='t3'>$text[3]</td>";
                     echo "<td class='t3'>$text[4]</td>";
                     echo "<td class='t5'>$text2[0]</td>";
-                    echo "<td class='t3'><form action='' method='post'><input type='submit' name='submit' value='查看'></form></td>";
+                    echo "<td class='t3'><form action='U12_detail_animal.php' method='post'><input type='hidden' name='a_id' value='$text[0]'><input type='submit' name='submit' value='查看'></form></td>";
                     echo "</tr>";
                 }
-                while ($row = mysqli_fetch_array($result, mysqli_num_rows($result))){
+                while ($row = mysqli_fetch_array($result)){
                     $sql2 = "SELECT `name` FROM `shelter` WHERE `id` = '$text[11]'";
                     $result2 = mysqli_query($connect,$sql2);
                     $text2 = mysqli_fetch_row($result2);
                     echo "<tr class='t2'>";
-                    echo "<td><img src='".$row[5]."'style='width:400px;'></td>";
+                    echo "<td><img src='".$row[5]."'></td>";
                     echo "<td class='t3'>$row[1]</td>";
                     echo "<td class='t3'>$row[2]</td>";
                     echo "<td class='t3'>$row[3]</td>";
                     echo "<td class='t3'>$row[4]</td>";
                     echo "<td class='t5'>$text2[0]</td>";
-                    echo "<td class='t3'><form action='' method='post'><input type='submit' name='submit' value='查看'></form></td>";
+                    echo "<td class='t3'><form action='U12_detail_animal.php' method='post'><input type='hidden' name='a_id' value='$row[0]'><input type='submit' name='submit' value='查看'></form></td>";
                     echo "</tr>";
                 }
                 echo "</table>";

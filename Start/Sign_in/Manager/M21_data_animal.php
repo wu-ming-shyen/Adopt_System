@@ -214,7 +214,7 @@
                         echo "<form>";
                     }
                     else if($result3 && mysqli_num_rows($result3)>0){
-                        while ($row = mysqli_fetch_array($result3, mysqli_num_rows($result3))){
+                        while ($row = mysqli_fetch_array($result3)){
                             $sql3 = "SELECT `time` FROM `contain` WHERE `a_id` = '$row[0]'";
                             $result4 = mysqli_query($connect,$sql3);
                             $time = mysqli_fetch_row($result4);

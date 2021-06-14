@@ -115,7 +115,7 @@
                     $text2 = mysqli_fetch_row($result2);
                     $A_Species = $text2[2];
                     $A_Sex = $text2[3];
-                    $S_ID = $text2[9];
+                    $S_ID = $text2[11];
                     $sql3 = "SELECT * FROM `shelter` WHERE `id` = '$S_ID'";
                     $result3 = mysqli_query($connect,$sql3);
                     $text3 = mysqli_fetch_row($result3);
@@ -131,9 +131,9 @@
                         <td>$S_Address</td>
                         <td>$S_Phone</td>
                         <td style='text-align: center;'>
-                            <form action='' method='POST'>
+                            <form action='U32_watch_animal.php' method='POST'>
                                 <input type='hidden' value='$U_ID' name='U_ID'>
-                                <input type='hidden' value='$A_ID' name='R_ID'>
+                                <input type='hidden' value='$A_ID' name='A_ID'>
                                 <input type='submit' value='查看' name='U_Name'><br>
                             </form>
                         </td>
