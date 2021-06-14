@@ -111,7 +111,7 @@
         <image src="M01_manager_UI/M31.png" alt="">
     </nav>
     <main>
-        <form action="search.php" method="POST">
+        <form action="User_Search.php" method="POST">
             <input type="text" name="email" style="width: 400px;">
             <input type="submit" value="查詢" style="margin-left: 30px;">
         </form>
