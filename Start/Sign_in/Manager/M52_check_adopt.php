@@ -4,7 +4,7 @@
     mysqli_query($connect,"SET NAMES 'UTF8'");
     $U_ID = $_POST['U_ID'];
     $R_ID = $_POST['R_ID'];
-    $U_Name = $_POST['U_Name'];
+    $M_Name = $_POST['U_Name'];
     
     $sql = "SELECT * FROM `user` WHERE `id`='$U_ID'";
     $result = mysqli_query($connect,$sql);
