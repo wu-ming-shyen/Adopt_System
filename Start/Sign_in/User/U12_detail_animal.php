@@ -185,7 +185,7 @@
                     echo "</table>";
                     echo "<table align='center'><tr>";
                     echo "<td style='width:200px;border-color:transparent;'>";
-                    echo "<form action='' method='POST'>";
+                    echo "<form action='U13_adopt_animal.php' method='POST'>";
                     echo "<input type='hidden' name='a_id' value='$text[0]'>";
                     echo "<input type='submit' value='我要領養' style='margin-top:5px;'>";
                     echo "</form>";

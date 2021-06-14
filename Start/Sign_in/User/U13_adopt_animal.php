@@ -3,7 +3,7 @@
     include('../../connect.php');
     mysqli_query($connect,"SET NAMES 'UTF8'");
     $email = parseurl($_COOKIE['user']);
-
+    $A_ID =  $_POST['a_id'];
     function parseurl($url=""){
         $url = rawurlencode(mb_convert_encoding($url, 'gb2312', 'utf-8'));
         $a = array("%3A", "%2F", "%40");
@@ -105,6 +105,7 @@
     <main>
         <form action="Resquisition_Insert.php" method="POST">
         <?php echo "<input type='hidden' value='$U_ID' name='U_ID'>"; ?>
+        <?php echo "<input type='hidden' value='$A_ID' name='A_ID'>"; ?>
         <table align="center">
             <tr>
                 <th>坪數</th>
