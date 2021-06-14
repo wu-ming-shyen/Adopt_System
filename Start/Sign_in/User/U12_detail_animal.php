@@ -183,21 +183,26 @@
                     echo "<td>$shelter_data[5]</td>";
                     echo "</tr>";
                     echo "</table>";
+                    echo "<table align='center'><tr>";
+                    echo "<td style='width:200px;border-color:transparent;'>";
                     echo "<form action='' method='POST'>";
                     echo "<input type='hidden' name='a_id' value='$text[0]'>";
-                    echo "<input type='submit' value='我要領養' style='margin-top:25px;'>";
+                    echo "<input type='submit' value='我要領養' style='margin-top:5px;'>";
                     echo "</form>";
+                    echo "</td>";
                     $sql4="SELECT * FROM `favorite` WHERE `u_id` = '$U_id[0]' AND `a_id` = '$text[0]';";
                     $result5 = mysqli_query($connect,$sql4);
                    
                     if(mysqli_num_rows($result5)==0){
+                        echo "<td style='width:200px;border-color:transparent;'>";
                         echo "<form action='insert_favorite.php' method='POST'>";
                         echo "<input type='hidden' name='u_id' value='$U_id[0]'>";
                         echo "<input type='hidden' name='a_id' value='$text[0]'>";
-                        echo "<input type='submit' value='加入我的最愛' style='margin-top:25px;width: 200px;'>";
+                        echo "<input type='submit' value='加入我的最愛' style='margin-top:5px;width: 200px;'>";
                         echo "</form>";
+                        echo "</td>";
                     }
-                    
+                    echo "</tr></table>";
                 }
             ?>
         </table>
