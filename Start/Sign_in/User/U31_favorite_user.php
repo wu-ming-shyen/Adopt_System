@@ -99,6 +99,7 @@
                 <th style="width: 280px;">收容所地址</th>
                 <th>收容所電話</th>
                 <th>查看詳細資料</th>
+                <th>刪除</th>
             </tr>
             <?php
                 header("Content-Type: text/html; charset=utf8");
@@ -135,6 +136,13 @@
                                 <input type='hidden' value='$U_ID' name='U_ID'>
                                 <input type='hidden' value='$A_ID' name='A_ID'>
                                 <input type='submit' value='查看' name='U_Name'><br>
+                            </form>
+                        </td>
+                        <td style='text-align: center;'>
+                            <form action='delete_favorite.php' method='POST'>
+                                <input type='hidden' value='$U_ID' name='U_ID'>
+                                <input type='hidden' value='$A_ID' name='A_ID'>
+                                <input type='submit' value='刪除' name='U_Name'><br>
                             </form>
                         </td>
                     </tr>

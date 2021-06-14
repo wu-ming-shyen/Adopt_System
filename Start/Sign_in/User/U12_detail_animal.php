@@ -100,6 +100,9 @@
             include('../../connect.php');
             mysqli_query($connect,"SET NAMES 'UTF8'");
             $email = parseurl($_COOKIE['user']);
+            $sql = "SELECT `id` FROM `user` WHERE `email` = '$email'";
+            $result2 = mysqli_query($connect,$sql);
+            $U_id = mysqli_fetch_row($result2);
 
             function parseurl($url=""){
                 $url = rawurlencode(mb_convert_encoding($url, 'gb2312', 'utf-8'));
@@ -184,13 +187,21 @@
                     echo "<td>$shelter_data[5]</td>";
                     echo "</tr>";
                     echo "</table>";
-                    echo "<form action='update_animal.php' method='POST'>";
+                    echo "<form action='' method='POST'>";
                     echo "<input type='hidden' name='a_id' value='$text[0]'>";
-                    echo "<input type='submit' value='我要領養' style='margin-top:50px;margin-right:50px;'>";
+                    echo "<input type='submit' value='我要領養' style='margin-top:25px;'>";
                     echo "</form>";
-                    echo "<form action='update_animal.php' method='POST'>";
-                    echo "<input type='submit' value='加入我的最愛' style='margin-top:50px;width: 200px;'>";
-                    echo "</form>";
+                    $sql4="SELECT * FROM `favorite` WHERE `u_id` = '$U_id[0]' AND `a_id` = '$text[0]';";
+                    $result5 = mysqli_query($connect,$sql4);
+                   
+                    if(mysqli_num_rows($result5)==0){
+                        echo "<form action='insert_favorite.php' method='POST'>";
+                        echo "<input type='hidden' name='u_id' value='$U_id[0]'>";
+                        echo "<input type='hidden' name='a_id' value='$text[0]'>";
+                        echo "<input type='submit' value='加入我的最愛' style='margin-top:25px;width: 200px;'>";
+                        echo "</form>";
+                    }
+                    
                 }
             ?>
         </table>
