@@ -8,9 +8,9 @@
     $img = $_POST['img'];
     $color = $_POST['color'];
     $fromwhere = $_POST['fromwhere'];
-
+    $open = $_POST['open'];
+    $status = $_POST['status'];
     $time = $_POST['time'];
-    $adppt = $_POST['adopt'];
     
     $email = parseurl($_COOKIE['user']);
 
@@ -26,11 +26,11 @@
     $result=mysqli_query($connect,$shelter);
     $shelter_data=mysqli_fetch_row($result);
 
-    $sql = "INSERT INTO `animal` (`id`, `genus`, `species`, `sex`, `age`, `img`, `color`, `fromwhere`, `s_id`) VALUES (NULL, '$genus', '$species', '$sex', '$age', '$img', '$color', '$fromwhere', '$shelter_data[0]');";
+    $sql = "INSERT INTO `animal` (`id`, `genus`, `species`, `sex`, `age`, `img`, `color`, `fromwhere`, `open`, `status`, `s_id`) VALUES (NULL, '$genus', '$species', '$sex', '$age', '$img', '$color', '$fromwhere', '$open', '$status', '$shelter_data[0]');";
     $result2 = mysqli_query($connect,$sql);
 
     if(!$result2){
-        echo "script>alert('ERROR');</script>";
+        echo "<script>alert('ERROR1');</script>";
         header("refresh:0;url=S11_data_animal.php");
     }else{
         $animal="SELECT `id` FROM `animal` WHERE `species` = '$species'";

@@ -8,10 +8,10 @@
 
     if(!$result){
         echo "script>alert('ERROR');</script>";
-        header("refresh:0;url=U11_search_animal?animal=請選擇&shelter=請選擇.php");
+        header("refresh:0;url=U11_search_animal.php?animal=請選擇&shelter=請選擇");
     }else{
         echo "<script>alert('加入成功');</script>";
-        header("refresh:0;url=U11_search_animal?animal=請選擇&shelter=請選擇.php");
+        header("refresh:0;url=U11_search_animal.php?animal=請選擇&shelter=請選擇");
     }
     mysqli_close($connect);
 ?>

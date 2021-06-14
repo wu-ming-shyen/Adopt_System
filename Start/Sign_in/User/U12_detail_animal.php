@@ -138,7 +138,7 @@
                     echo "</tr>";
                     echo "<tr>";
                     echo "<th>是否開放領養:</th>";
-                    echo "<td></td>";
+                    echo "<td>$text[8]</td>";
                     echo "</tr>";
                     echo "<tr>";
                     echo "<th>來源行政區:</th>";
@@ -159,10 +159,6 @@
                     echo "<tr>";
                     echo "<th>動物性別:</th>";
                     echo "<td>$text[3]</td>";
-                    echo "</tr>";
-                    echo "<tr>";
-                    echo "<th>動物名:</th>";
-                    echo "<td></td>";
                     echo "</tr>";
                     echo "<tr>";
                     echo "<th>年齡:</th>";

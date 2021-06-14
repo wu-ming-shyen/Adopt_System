@@ -69,12 +69,12 @@
             text-decoration:none;
         }
         input[type="submit"] {
-            margin-top: 150px;
+            margin-top: 100px;
             font-size: 30px;
             width: 150px;
         }
         input[type="button"] {
-            margin-top: 150px;
+            margin-top: 100px;
             font-size: 30px;
             width: 150px;
         }
@@ -122,7 +122,7 @@
                 </tr>
                 <tr>
                     <th>是否開放領養:</th>
-                    <td><input type="text" name="adopt"></td>
+                    <td><input type="text" name="open"></td>
                 </tr>
                 <tr>
                     <th>來源行政區:</th>
@@ -145,8 +145,8 @@
                     <td><input type="text" name="sex"></td>
                 </tr>
                 <tr>
-                    <th>動物名:</th>
-                    <td><input type="text" value=""></td>
+                    <th>領養狀態:</th>
+                    <td><input type="text" name="status"></td>
                 </tr>
             </table>
             <table align="center" id="table2">
@@ -172,8 +172,8 @@
                 </tr>
             </table>
             <input type="submit" value="新增">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <form>
-        <input type="button" value="維護貓狗" onclick="location.href='S11_data_animal2.php?animal=請選擇'">
+            <input type="button" value="維護貓狗" onclick="location.href='S11_data_animal2.php?animal=請選擇'">
+        </form>
     </main>
     
 </body>

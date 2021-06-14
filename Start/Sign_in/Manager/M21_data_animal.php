@@ -56,11 +56,11 @@
         
         #table1 {
             float: left;
-            margin-top: 20px;
+
             margin-left: 200px;
         }
         table {
-            margin-top: 20px;
+
         }
         #animal {
             width: 410px;
@@ -156,7 +156,7 @@
                         echo "</tr>";
                         echo "<tr>";
                         echo "<th>是否開放領養:</th>";
-                        echo "<td><input type='text' name='adopt'></td>";
+                        echo "<td><input type='text' name='open' value='$text[8]'></td>";
                         echo "</tr>";
                         echo "<tr>";
                         echo "<th>來源行政區:</th>";
@@ -179,8 +179,8 @@
                         echo "<td><input type='text' name='sex' value='$text[3]'></td>";
                         echo "</tr>";
                         echo "<tr>";
-                        echo "<th>動物名:</th>";
-                        echo "<td><input type='text' value=''></td>";
+                        echo "<th>領養狀態:</th>";
+                        echo "<td><input type='text' name='status' value='$text[9]'></td>";
                         echo "</tr>";
                         echo "<tr>";
                         echo "<th>年齡:</th>";
@@ -194,7 +194,7 @@
                         echo "</tr>";
                         echo "<tr>";
                         echo "<th>圖片連結:</th>";
-                        echo "<td><input type='text' name='img'></td>";
+                        echo "<td><input type='text' name='img' value='$text[5]'></td>";
                         echo "</tr>";
                         echo "<tr>";
                         echo "<th>公告收容所:</th>";
@@ -209,16 +209,17 @@
                         echo "<td>$shelter_data[5]</td>";
                         echo "</tr>";
                         echo "</table>";
-                        echo "<input type='hidden' name='id' value='$text[0]'>";
+                        echo "<input type='hidden' name='a_id' value='$text[0]'>";
+                        echo "<input type='hidden' name='s_id' value='$text[11]'>";
                         echo "<input type='submit' value='修改' style='margin-top:10px;'>";
-                        echo "<form>";
+                        echo "</form>";
                     }
                     else if($result3 && mysqli_num_rows($result3)>0){
                         while ($row = mysqli_fetch_array($result3)){
                             $sql3 = "SELECT `time` FROM `contain` WHERE `a_id` = '$row[0]'";
                             $result4 = mysqli_query($connect,$sql3);
                             $time = mysqli_fetch_row($result4);
-                            echo "<form action='update_animal.php' method='POST'>";
+                            echo "<br><br><br><br><form action='update_animal.php' method='POST'>";
                             echo "<table align='center' id='table1'>";
                             echo "<tr>";
                             echo "<th>入所日期:</th>";
@@ -231,7 +232,7 @@
                             echo "</tr>";
                             echo "<tr>";
                             echo "<th>是否開放領養:</th>";
-                            echo "<td><input type='text' name='adopt'></td>";
+                            echo "<td><input type='text' name='open' value='$row[8]'></td>";
                             echo "</tr>";
                             echo "<tr>";
                             echo "<th>來源行政區:</th>";
@@ -254,12 +255,12 @@
                             echo "<td><input type='text' name='sex' value='$row[3]'></td>";
                             echo "</tr>";
                             echo "<tr>";
-                            echo "<th>動物名:</th>";
-                            echo "<td><input type='text' value=''></td>";
-                            echo "</tr>";
+                            echo "<th>領養狀態:</th>";
+                            echo "<td><input type='text' name='status' value='$row[9]'></td>";
                             echo "<tr>";
                             echo "<th>年齡:</th>";
                             echo "<td><input type='text' name='age' value='$row[4]'></td>";
+                            echo "</tr>";
                             echo "</tr>";
                             echo "</table>";
                             echo "<table align='center' id='table2'>";
@@ -269,7 +270,7 @@
                             echo "</tr>";
                             echo "<tr>";
                             echo "<th>圖片連結:</th>";
-                            echo "<td><input type='text' name='img' value=''></td>";
+                            echo "<td><input type='text' name='img' value='$row[5]'></td>";
                             echo "</tr>";
                             echo "<tr>";
                             echo "<th>公告收容所:</th>";
@@ -284,9 +285,10 @@
                             echo "<td>$shelter_data[5]</td>";
                             echo "</tr>";
                             echo "</table>";
-                            echo "<input type='hidden' name='id' value='$row[0]'>";
+                            echo "<input type='hidden' name='a_id' value='$row[0]'>";
+                            echo "<input type='hidden' name='s_id' value='$row[11]'>";
                             echo "<input type='submit' value='修改' style='margin-top:10px;'>";
-                            echo "<form><br><br><br><br><br><br><br><br><br><br><br><br>";
+                            echo "</form><br><br><br><br><br><br>";
                         }
                     }
                     else{

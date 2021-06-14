@@ -158,10 +158,6 @@
                     echo "<td>$text[3]</td>";
                     echo "</tr>";
                     echo "<tr>";
-                    echo "<th>動物名:</th>";
-                    echo "<td></td>";
-                    echo "</tr>";
-                    echo "<tr>";
                     echo "<th>年齡:</th>";
                     echo "<td>$text[4]</td>";
                     echo "</tr>";

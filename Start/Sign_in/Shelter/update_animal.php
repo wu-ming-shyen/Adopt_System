@@ -2,7 +2,8 @@
     include('../../connect.php');
     mysqli_query($connect,"SET NAMES 'UTF8'");
     header("content-type:text/html;charset=utf-8");
-    $id = $_POST['id'];
+    $s_id = $_POST['s_id'];
+    $a_id = $_POST['a_id'];
     $genus = $_POST['genus'];
     $species = $_POST['species'];
     $sex = $_POST['sex'];
@@ -10,9 +11,9 @@
     $img = $_POST['img'];
     $color = $_POST['color'];
     $fromwhere = $_POST['fromwhere'];
-
+    $open = $_POST['open'];
+    $status = $_POST['status'];
     $time = $_POST['time'];
-    $adppt = $_POST['adopt'];
     
     $email = parseurl($_COOKIE['user']);
 
@@ -24,14 +25,20 @@
         return $url;
     }
 
-    $sql = "UPDATE `animal` SET `genus`='$genus', `species`='$species', `sex`='$sex', `age`='$age', `img`='$img', `color`='$color', `fromwhere`='$fromwhere' WHERE `id` = '$id'";
+    $sql = "UPDATE `animal` SET `genus`='$genus', `species`='$species', `sex`='$sex', `age`='$age', `img`='$img', `color`='$color', `fromwhere`='$fromwhere', `open` = '$open', `status` = '$status' WHERE `id` = '$a_id'";
     $result2 = mysqli_query($connect,$sql);
 
     if(!$result2){
         echo "<script>alert('ERROR');</script>";
         echo "<script>location.href='S11_data_animal2.php?animal=請選擇'</script>";
     }else{
-        $sql2 = "UPDATE `contain` SET `time` = '$time' WHERE `a_id` = '$id'";
+        $sql1 = "SELECT * FROM `contain` WHERE `s_id` = '$s_id' AND `a_id`= '$a_id'";
+        $result=mysqli_query($connect,$sql1);
+        if(mysqli_num_rows($result)==0){
+            $sql3 = "INSERT INTO `contain` (`s_id`, `a_id`) VALUES ('$s_id', '$a_id');";
+            $result3=mysqli_query($connect,$sql3);
+        }
+        $sql2 = "UPDATE `contain` SET `time` = '$time' WHERE `a_id` = '$a_id'";
         $result4=mysqli_query($connect,$sql2);
         if(!$result4){
             echo "<script>alert('ERROR');</script>";
