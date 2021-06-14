@@ -56,11 +56,7 @@
         
         #table1 {
             float: left;
-            margin-top: 20px;
             margin-left: 200px;
-        }
-        table {
-            margin-top: 20px;
         }
         #animal {
             width: 410px;
@@ -145,7 +141,7 @@
                         $sql3 = "SELECT `time` FROM `contain` WHERE `a_id` = '$text[0]'";
                         $result4 = mysqli_query($connect,$sql3);
                         $time = mysqli_fetch_row($result4);
-                        echo "<form action='update_animal.php' method='POST'>";
+                        echo "<br><br><br><br><form action='update_animal.php' method='POST'>";
                         echo "<table align='center' id='table1'>";
                         echo "<tr>";
                         echo "<th>入所日期:</th>";
@@ -221,7 +217,7 @@
                             $sql3 = "SELECT `time` FROM `contain` WHERE `a_id` = '$row[0]'";
                             $result4 = mysqli_query($connect,$sql3);
                             $time = mysqli_fetch_row($result4);
-                            echo "<form action='update_animal.php' method='POST'>";
+                            echo "<br><br><br><br><form action='update_animal.php' method='POST'>";
                             echo "<table align='center' id='table1'>";
                             echo "<tr>";
                             echo "<th>入所日期:</th>";
@@ -290,7 +286,7 @@
                             echo "<input type='hidden' name='a_id' value='$row[0]'>";
                             echo "<input type='hidden' name='s_id' value='$row[11]'>";
                             echo "<input type='submit' value='修改' style='margin-top:10px;'>";
-                            echo "</form><br><br><br><br><br><br><br><br><br><br><br><br>";
+                            echo "</form><br><br><br><br><br><br>";
                         }
                     }    
                 }
@@ -302,7 +298,7 @@
                         $sql3 = "SELECT `time` FROM `contain` WHERE `a_id` = '$text[0]'";
                         $result4 = mysqli_query($connect,$sql3);
                         $time = mysqli_fetch_row($result4);
-                        echo "<form action='update_animal.php' method='POST'>";
+                        echo "<br><br><br><br><form action='update_animal.php' method='POST'>";
                         echo "<table align='center' id='table1'>";
                         echo "<tr>";
                         echo "<th>入所日期:</th>";
