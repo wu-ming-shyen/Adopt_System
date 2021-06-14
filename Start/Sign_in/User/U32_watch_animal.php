@@ -123,8 +123,6 @@
                     $shelter="SELECT * FROM `shelter` WHERE `id` = '$text[11]'";
                     $result=mysqli_query($connect,$shelter);
                     $shelter_data=mysqli_fetch_row($result);
-
-                    echo "<form action='update_animal.php' method='POST'>";
                     echo "<table align='center' id='table1'>";
                     echo "<tr>";
                     echo "<th>入所日期:</th>";
@@ -186,6 +184,7 @@
                     echo "<td>$shelter_data[5]</td>";
                     echo "</tr>";
                     echo "</table>";
+                    echo "<form action='' method='POST'>";
                     echo "<input type='hidden' name='id' value='$text[0]'>";
                     echo "<input type='submit' value='我要領養' style='margin-top:50px;'>";
                     echo "<form>";
