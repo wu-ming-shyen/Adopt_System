@@ -16,15 +16,13 @@
     $result = mysqli_query($connect,$sql);
     for($i=1; $i <= mysqli_num_rows($result);$i++){
         $text = mysqli_fetch_row($result);
+        $U_ID = $text[0];
         $U_Name = $text[1];
-        $U_Email = $text[2];
-        $U_Password = $text[3];
-        $U_Sex = $text[4];
-        $U_ID_Number = $text[5];
-        $U_Phone = $text[6];
-        $U_Address = $text[7];
-        $U_Birthday = $text[8];
     }
+    $U_Area = "";
+    $U_Have = "";
+    $U_Salary = "";
+    $U_Address = "";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -102,50 +100,30 @@
             echo "<a id=test>HI $U_Name</a>";
         ?>
         <image class="title" src="U01_user_UI/title.png" alt=""><br>
-        <image src="U01_user_UI/U21.png" alt=""></image>
+        <img src="U13_adopt_animal/U13.png" alt="">
     </nav>
     <main>
-        <form action="User_Update.php" method="POST">
-        <?php echo "<input type='hidden' value='$email' name='email'>"; ?>
+        <form action="Resquisition_Insert.php" method="POST">
+        <?php echo "<input type='hidden' value='$U_ID' name='U_ID'>"; ?>
         <table align="center">
             <tr>
-                <th>會員名稱</th>
-                <?php echo "<td><input type='text' value='$U_Name' name=U_Name></td>"; ?>
+                <th>坪數</th>
+                <?php echo "<td><input type='text' value='$U_Area' name=U_Area></td>"; ?>
             </tr>
             <tr>
-                <th>電子郵件</th>
-                <td style="background-color: lightyellow;">
-                    <?php echo "$U_Email"; ?>
-                </td>
+                <th>現有動物隻數</th>
+                <?php echo "<td><input type='text' value='$U_Have' name=U_Have></td>"; ?>
             </tr>
             <tr>
-                <th>密碼</th>
-                <?php echo "<td><input type='text' value='$U_Password' name=U_Password></td>"; ?>
+                <th>薪水(月薪)</th>
+                <?php echo "<td><input type='text' value='$U_Salary' name=U_Salary></td>"; ?>
             </tr>
             <tr>
-                <th>生日</th>
-                <?php echo "<td><input type='text' value='$U_Birthday' name=U_Birthday></td>"; ?>
-            </tr>
-            <tr>
-                <th>電話</th>
-                <?php echo "<td><input type='text' value='$U_Phone' name=U_Phone></td>"; ?>
-            </tr>
-            <tr>
-                <th>性別</th>
-                <?php echo "<td><input type='text' value='$U_Sex' name=U_Sex></td>"; ?>
-            </tr>
-            <tr>
-                <th>戶籍</th>
+                <th>通訊地址</th>
                 <?php echo "<td><input type='text' value='$U_Address' name=U_Address></td>"; ?>
             </tr>
-            <tr>
-                <th>身份證字號</th>
-                <td style="background-color: lightyellow;">
-                    <?php echo "$U_ID_Number"; ?>
-                </td>
-            </tr>
         </table>
-        <input type="submit" value="送出修改">
+        <input type="submit" value="送出申請">
         </form>
     </main>
 </body>
