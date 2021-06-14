@@ -184,11 +184,15 @@
                         echo "<th>動物名:</th>";
                         echo "<td><input type='text' value=''></td>";
                         echo "</tr>";
-                        echo "</table>";
-                        echo "<table align='center' id='table2'>";
                         echo "<tr>";
                         echo "<th>年齡:</th>";
                         echo "<td><input type='text' name='age' value='$text[4]'></td>";
+                        echo "</tr>";
+                        echo "</table>";
+                        echo "<table align='center' id='table2'>";
+                        echo "<tr>";
+                        echo "<th>圖片:</th>";
+                        echo "<td><img src='".$text[5]."'style='height:200px;'></td>";
                         echo "</tr>";
                         echo "<tr>";
                         echo "<th>圖片連結:</th>";
@@ -208,7 +212,7 @@
                         echo "</tr>";
                         echo "</table>";
                         echo "<input type='hidden' name='id' value='$text[0]'>";
-                        echo "<input type='submit' value='修改' style='margin-top:100px;'>";
+                        echo "<input type='submit' value='修改' style='margin-top:10px;'>";
                         echo "<form>";
                     }
                     else if($result3 && mysqli_num_rows($result3)>0){
@@ -254,12 +258,16 @@
                             echo "<tr>";
                             echo "<th>動物名:</th>";
                             echo "<td><input type='text' value=''></td>";
+                            echo "<tr>";
+                            echo "<th>年齡:</th>";
+                            echo "<td><input type='text' name='age' value='$row[4]'></td>";
+                            echo "</tr>";
                             echo "</tr>";
                             echo "</table>";
                             echo "<table align='center' id='table2'>";
                             echo "<tr>";
-                            echo "<th>年齡:</th>";
-                            echo "<td><input type='text' name='age' value='$row[4]'></td>";
+                            echo "<th>圖片:</th>";
+                            echo "<td><img src='".$row[5]."'style='height:200px;'></td>";
                             echo "</tr>";
                             echo "<tr>";
                             echo "<th>圖片連結:</th>";
@@ -279,7 +287,7 @@
                             echo "</tr>";
                             echo "</table>";
                             echo "<input type='hidden' name='id' value='$row[0]'>";
-                            echo "<input type='submit' value='修改' style='margin-top:100px;'>";
+                            echo "<input type='submit' value='修改' style='margin-top:10px;'>";
                             echo "<form><br><br><br><br><br><br><br><br><br><br><br><br>";
                         }
                     }    
@@ -331,11 +339,15 @@
                         echo "<th>動物名:</th>";
                         echo "<td><input type='text' value=''></td>";
                         echo "</tr>";
-                        echo "</table>";
-                        echo "<table align='center' id='table2'>";
                         echo "<tr>";
                         echo "<th>年齡:</th>";
                         echo "<td><input type='text' name='age' value='$text[4]'></td>";
+                        echo "</tr>";
+                        echo "</table>";
+                        echo "<table align='center' id='table2'>";
+                        echo "<tr>";
+                        echo "<th>圖片:</th>";
+                        echo "<td><img src='".$text[5]."'style='height:200px;'></td>";
                         echo "</tr>";
                         echo "<tr>";
                         echo "<th>圖片連結:</th>";
@@ -355,7 +367,7 @@
                         echo "</tr>";
                         echo "</table>";
                         echo "<input type='hidden' name='id' value='$text[0]'>";
-                        echo "<input type='submit' value='修改' style='margin-top:100px;'>";
+                        echo "<input type='submit' value='修改' style='margin-top:10px;'>";
                         echo "<form>";
                     }
                 }
