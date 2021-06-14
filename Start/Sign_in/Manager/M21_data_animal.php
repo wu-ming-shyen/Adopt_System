@@ -84,15 +84,15 @@
 <body>
     <nav>
         <a href="../check_out.php" id="test">&nbsp;登出</a>
-        <a href="S01_shelter_UI.html" id="test">回首頁</a>
+        <a href="M01_manager_UI.html" id="test">回首頁</a>
         
         <script>
             var match = document.cookie.match(new RegExp("user"+"=([^;]*)"));
             var a = match[0].replace(/user=/g, '').replace(/;/g, '').split('%')[0];
             document.write('<a id="test">HI! '+a+'&nbsp;&nbsp;</a>');
         </script>
-        <image src="S01_shelter_UI/title.png" alt="">
-        <image src="S01_shelter_UI/S11.png" alt="">
+        <image src="M01_manager_UI/title.png" alt=""><br>
+        <image src="M01_manager_UI/M21.png" alt="">
     </nav>
     <main>
         <?php
@@ -108,21 +108,16 @@
                 $url = str_replace($a, $b, $url);
                 return $url;
             }
-
-            $shelter="SELECT * FROM `shelter` WHERE `email` = '$email'";
-            $result=mysqli_query($connect,$shelter);
-            $shelter_data=mysqli_fetch_row($result);
         ?>
         <select id="option">
             <option>請選擇</option>
-            <option>全部</option>
             <?php
-                $animal="SELECT * FROM `animal` WHERE `s_id` = '$shelter_data[0]'";
-                $result2=mysqli_query($connect,$animal);
-                if(mysqli_num_rows($result2)>0){
-                    for($i=1; $i <= mysqli_num_rows($result2);$i++){
-                        $text = mysqli_fetch_row($result2);
-                        echo "<option>$text[2]</option>";
+                $shelter="SELECT `name` FROM `shelter`";
+                $result=mysqli_query($connect,$shelter);
+                if(mysqli_num_rows($result)>0){
+                    for($i=1; $i <= mysqli_num_rows($result);$i++){
+                        $text = mysqli_fetch_row($result);
+                        echo "<option>$text[0]</option>";
                     }
                 }
             ?>
@@ -130,16 +125,19 @@
         <input type="submit" value="確定" style="font-size: 25px;margin-left: 50px;width:100px;" onclick="test()">
         <script type="text/javascript">
             function test(){
-                var animal = document.getElementById("option").value;
-                location.href="S11_data_animal2.php?animal="+animal;
+                var shelter = document.getElementById("option").value;
+                location.href="M21_data_animal.php?shelter="+shelter;
             }
         </script>
         <table>
             <?php
-                $animal = $_GET['animal'];
-                $sql2 = "SELECT * FROM `animal` WHERE `s_id` = '$shelter_data[0]'";
-                $result3 = mysqli_query($connect,$sql2);
-                if($animal == "全部"){
+                $shelter_name = $_GET['shelter'];
+                if($shelter_name != "請選擇"){
+                    $sql="SELECT * FROM `shelter` WHERE `name` = '$shelter_name'";
+                    $result=mysqli_query($connect,$sql);
+                    $shelter_data=mysqli_fetch_row($result);
+                    $sql2 = "SELECT * FROM `animal` WHERE `s_id` = '$shelter_data[0]'";
+                    $result3 = mysqli_query($connect,$sql2);
                     if(mysqli_num_rows($result3)==1){
                         $text = mysqli_fetch_row($result3);
                         $sql3 = "SELECT `time` FROM `contain` WHERE `a_id` = '$text[0]'";
@@ -282,82 +280,10 @@
                             echo "<input type='submit' value='修改' style='margin-top:100px;'>";
                             echo "<form><br><br><br><br><br><br><br><br><br><br><br><br>";
                         }
-                    }    
-                }
-                else if($animal != "請選擇" ){
-                    $sql2 = "SELECT * FROM `animal` WHERE `species` = '$animal' AND `s_id` = '$shelter_data[0]'";
-                    $result3 = mysqli_query($connect,$sql2);
-                    if(mysqli_num_rows($result3)==1){
-                        $text = mysqli_fetch_row($result3);
-                        $sql3 = "SELECT `time` FROM `contain` WHERE `a_id` = '$text[0]'";
-                        $result4 = mysqli_query($connect,$sql3);
-                        $time = mysqli_fetch_row($result4);
-                        echo "<form action='update_animal.php' method='POST'>";
-                        echo "<table align='center' id='table1'>";
-                        echo "<tr>";
-                        echo "<th>入所日期:</th>";
-                        if($time==""){
-                            echo "<td><input type='date' name='time' value=''></td>";
-                        }
-                        else{
-                            echo "<td><input type='date' name='time' value='$time[0]'></td>";
-                        }
-                        echo "</tr>";
-                        echo "<tr>";
-                        echo "<th>是否開放領養:</th>";
-                        echo "<td><input type='text' name='adopt'></td>";
-                        echo "</tr>";
-                        echo "<tr>";
-                        echo "<th>來源行政區:</th>";
-                        echo "<td><input type='text' name='fromwhere' value='$text[7]'></td>";
-                        echo "</tr>";
-                        echo "<tr>";
-                        echo "<th>動物別:</th>";
-                        echo "<td><input type='text' name='genus' value='$text[1]'></td>";
-                        echo "</tr>";
-                        echo "<tr>";
-                        echo "<th>動物品種:</th>";
-                        echo "<td><input type='text' name='species' value='$text[2]'></td>";
-                        echo "</tr>";
-                        echo "<tr>";
-                        echo "<th>毛色:</th>";
-                        echo "<td><input type='text' name='color' value='$text[6]'></td>";
-                        echo "</tr>";
-                        echo "<tr>";
-                        echo "<th>動物性別:</th>";
-                        echo "<td><input type='text' name='sex' value='$text[3]'></td>";
-                        echo "</tr>";
-                        echo "<tr>";
-                        echo "<th>動物名:</th>";
-                        echo "<td><input type='text' value=''></td>";
-                        echo "</tr>";
-                        echo "</table>";
-                        echo "<table align='center' id='table2'>";
-                        echo "<tr>";
-                        echo "<th>年齡:</th>";
-                        echo "<td><input type='text' name='age' value='$text[4]'></td>";
-                        echo "</tr>";
-                        echo "<tr>";
-                        echo "<th>圖片連結:</th>";
-                        echo "<td><input type='text' name='img'></td>";
-                        echo "</tr>";
-                        echo "<tr>";
-                        echo "<th>公告收容所:</th>";
-                        echo "<td>$shelter_data[1]</td>";
-                        echo "</tr>";
-                        echo "<tr>";
-                        echo "<th>收容所電話:</th>";
-                        echo "<td>$shelter_data[4]</td>";
-                        echo "</tr>";
-                        echo "<tr>";
-                        echo "<th>收容所地址:</th>";
-                        echo "<td>$shelter_data[5]</td>";
-                        echo "</tr>";
-                        echo "</table>";
-                        echo "<input type='hidden' name='id' value='$text[0]'>";
-                        echo "<input type='submit' value='修改' style='margin-top:100px;'>";
-                        echo "<form>";
                     }
+                    else{
+                        echo "<script>alert('查無資料');</script>";
+                    }   
                 }
             ?>
         </table>
