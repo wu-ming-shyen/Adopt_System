@@ -2,9 +2,32 @@
     header("Content-Type: text/html; charset=utf8");
     include('../../connect.php');
     mysqli_query($connect,"SET NAMES 'UTF8'");
+    $email = parseurl($_COOKIE['user']);
     $U_ID = $_POST['U_ID'];
     $R_ID = $_POST['R_ID'];
-    $M_Name = $_POST['U_Name'];
+    $U_Name = $_POST['U_Name'];
+
+    function parseurl($url=""){
+        $url = rawurlencode(mb_convert_encoding($url, 'gb2312', 'utf-8'));
+        $a = array("%3A", "%2F", "%40");
+        $b = array(":", "/", "@");
+        $url = str_replace($a, $b, $url);
+        return $url;
+    }
+
+    $sql = "SELECT * FROM `manager` WHERE `email` = '$email'";
+    $result = mysqli_query($connect,$sql);
+    for($i=1; $i <= mysqli_num_rows($result);$i++){
+        $text = mysqli_fetch_row($result);
+        $M_Name = $text[1];
+        $M_Email = $text[2];
+        $M_Password = $text[3];
+        $M_Birthday = $text[4];
+        $M_Phone = $text[5];
+        $M_ID_Number = $text[6];
+        $M_Sex = $text[7];
+        $M_Address = $text[8];
+    }
     
     $sql = "SELECT * FROM `user` WHERE `id`='$U_ID'";
     $result = mysqli_query($connect,$sql);
@@ -34,6 +57,11 @@
 <html lang="en">
 
 <head>
+    <?php
+        if($email == ""){
+            echo "<meta http-equiv='refresh' content='0; url=../check_in.php'>";
+        }
+    ?>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
