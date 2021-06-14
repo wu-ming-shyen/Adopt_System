@@ -111,64 +111,65 @@
         ?>
         <image src="M01_manager_UI/title.png" alt=""><br>
         <image src="M01_manager_UI/M41.png" alt="">
-        <main>
-            <form action="M41_data_shelter.php" method="POST">
-                <select name="S_Area">
-                    <option value="">請選擇</option>
-                    <option value="北部">北部</option>
-                    <option value="中部">中部</option>
-                    <option value="南部">南部</option>
-                    <option value="東部">東部</option>
-                </select>
-                <input type="submit" value="查詢">
-            </form>
-            <?php
-                header("Content-Type: text/html; charset=utf8");
-                include('../../connect.php');
-                mysqli_query($connect,"SET NAMES 'UTF8'");
-                
-                if(isset($_POST['S_Area'])){
-                    $S_Area = $_POST['S_Area'];
-                }
-                else{
-                    $S_Area="";
-                }
-                
-                $sql = "SELECT * FROM `shelter` WHERE `area` = '$S_Area'";
-                $result = mysqli_query($connect,$sql);
-                for($i=1; $i <= mysqli_num_rows($result);$i++){
-                    $text = mysqli_fetch_row($result);
-                    $S_Name = $text[1];
-                    $S_Email = $text[2];
-                    $S_Password = $text[3];
-                    $S_Phone = $text[4];
-                    $S_Address = $text[5];
-                    $S_Area = $text[6];
-                    echo "
-                    <table align=\"center\">
-                        <tr>
-                            <th>收容所名稱:</th>
-                            <td style=\"background-color: lightyellow;\">
-                                $S_Name
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>收容所電話:</th>
-                            <td style=\"background-color: lightyellow;\">
-                                $S_Phone
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>收容所住址:</th>
-                            <td style=\"background-color: lightyellow;\">
-                                $S_Address
-                            </td>
-                        </tr>
-                    </table>
-                    ";
-                }
-            ?>
-        </main>
+    </nav>
+    <main>
+        <form action="M41_data_shelter.php" method="POST">
+            <select name="S_Area">
+                <option value="">請選擇</option>
+                <option value="北部">北部</option>
+                <option value="中部">中部</option>
+                <option value="南部">南部</option>
+                <option value="東部">東部</option>
+            </select>
+            <input type="submit" value="查詢">
+        </form>
+        <?php
+            header("Content-Type: text/html; charset=utf8");
+            include('../../connect.php');
+            mysqli_query($connect,"SET NAMES 'UTF8'");
+            
+            if(isset($_POST['S_Area'])){
+                $S_Area = $_POST['S_Area'];
+            }
+            else{
+                $S_Area="";
+            }
+            
+            $sql = "SELECT * FROM `shelter` WHERE `area` = '$S_Area'";
+            $result = mysqli_query($connect,$sql);
+            for($i=1; $i <= mysqli_num_rows($result);$i++){
+                $text = mysqli_fetch_row($result);
+                $S_Name = $text[1];
+                $S_Email = $text[2];
+                $S_Password = $text[3];
+                $S_Phone = $text[4];
+                $S_Address = $text[5];
+                $S_Area = $text[6];
+                echo "
+                <table align='center'>
+                    <tr>
+                        <th>收容所名稱:</th>
+                        <td style='background-color: lightyellow;'>
+                            $S_Name
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>收容所電話:</th>
+                        <td style='background-color: lightyellow;'>
+                            $S_Phone
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>收容所住址:</th>
+                        <td style='background-color: lightyellow;'>
+                            $S_Address
+                        </td>
+                    </tr>
+                </table>
+                ";
+            }
+        ?>
+    </main>
 </body>
 
 </html>
