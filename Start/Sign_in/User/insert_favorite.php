@@ -7,7 +7,7 @@
     $result = mysqli_query($connect,$sql);
 
     if(!$result){
-        echo "script>alert('ERROR');</script>";
+        echo "<script>alert('ERROR');</script>";
         header("refresh:0;url=U11_search_animal.php?animal=請選擇&shelter=請選擇");
     }else{
         echo "<script>alert('加入成功');</script>";

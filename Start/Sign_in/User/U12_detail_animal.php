@@ -197,7 +197,7 @@
                         echo "<td style='width:200px;border-color:transparent;'>";
                         echo "<form action='insert_favorite.php' method='POST'>";
                         echo "<input type='hidden' name='u_id' value='$U_id[0]'>";
-                        echo "<input type='hidden' name='A_ID' value='$A_ID'>";
+                        echo "<input type='hidden' name='a_id' value='$A_ID'>";
                         echo "<input type='submit' value='加入我的最愛' style='margin-top:5px;width: 200px;'>";
                         echo "</form>";
                         echo "</td>";
