@@ -11,7 +11,7 @@
     $result = mysqli_query($connect,$sql);
 
     if(!$result){
-        echo "script>alert('ERROR');</script>";
+        echo "<script>alert('ERROR');</script>";
         header("refresh:0;url=U01_user_UI.html");
     }else{
         echo "<script>alert('申請成功');</script>";

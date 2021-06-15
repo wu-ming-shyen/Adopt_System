@@ -10,7 +10,7 @@
     $result = mysqli_query($connect,$sql);
 
     if(!$result){
-        echo "script>alert('ERROR');</script>";
+        echo "<script>alert('ERROR');</script>";
         header("refresh:0;url=M31_data_user.php");
     }else{
         echo "<script>alert('修改成功');</script>";

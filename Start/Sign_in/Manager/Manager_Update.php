@@ -14,7 +14,7 @@
     $result = mysqli_query($connect,$sql);
 
     if(!$result){
-        echo "script>alert('ERROR');</script>";
+        echo "<script>alert('ERROR');</script>";
         header("refresh:0;url=M11_data_manager.php");
     }else{
         echo "<script>alert('修改成功');</script>";

@@ -7,7 +7,7 @@
     $result = mysqli_query($connect,$sql);
 
     if(!$result){
-        echo "script>alert('ERROR');</script>";
+        echo "<script>alert('ERROR');</script>";
         header("refresh:0;url=U31_favorite_user.php");
     }else{
         echo "<script>alert('刪除成功');</script>";
