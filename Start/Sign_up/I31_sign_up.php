@@ -38,6 +38,7 @@
                 header("refresh:0;url=I31_sign_up.html");
             }else{
                 echo "<script>alert('註冊成功');</script>";
+                header("refresh:0;url=../Sign_in/I21_sign_in.html");
             }
         }
         mysqli_close($connect);
