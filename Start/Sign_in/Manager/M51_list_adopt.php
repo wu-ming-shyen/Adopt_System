@@ -95,8 +95,8 @@
                 echo "
                 <form action='M52_check_adopt.php' method='POST'>
                     <input type='hidden' value='$U_ID' name='U_ID'>
-                    <input type='hidden' value='$R_ID' name='R_ID'>
-                    <input type='submit' value='$U_Name' name='U_Name'><br>
+                    <input type='submit' value='$R_ID' name='R_ID'>
+                    <input type='hidden' value='$U_Name' name='U_Name'><br>
                 </form>
                 ";
             }
