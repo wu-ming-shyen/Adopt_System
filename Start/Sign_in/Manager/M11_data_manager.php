@@ -124,7 +124,7 @@
             </tr>
             <tr>
                 <th>生日</th>
-                <?php echo "<td><input type='text' value='$M_Birthday' name=M_Birthday></td>"; ?>
+                <?php echo "<td><input type='date' value='$M_Birthday' name=M_Birthday></td>"; ?>
             </tr>
             <tr>
                 <th>電話</th>
