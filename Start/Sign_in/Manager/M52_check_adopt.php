@@ -44,12 +44,13 @@
     $sql2 = "SELECT * FROM `requisition` WHERE `r_id`='$R_ID'";
     $result2 = mysqli_query($connect,$sql2);
     $text2 = mysqli_fetch_row($result2);
-    $R_Date = $text2[2];
-    $R_Area = $text2[3];
-    $R_Have = $text2[4];
-    $R_Salary = $text2[5];
-    $R_Address = $text2[6];
-    $R_Aduit = $text2[7];
+    $A_ID = $text2[2];
+    $R_Date = $text2[3];
+    $R_Area = $text2[4];
+    $R_Have = $text2[5];
+    $R_Salary = $text2[6];
+    $R_Address = $text2[7];
+    $R_Aduit = $text2[8];
     
 
 ?>
@@ -135,6 +136,12 @@
     </nav>
     <main>
         <table align="center">
+            <tr>
+                <th>動物編號</th>
+                <td style='background-color: lightyellow;'>
+                    <?php echo "$A_ID"; ?>
+                </td>
+            </tr>
             <tr>
                 <th>申請人</th>
                 <td style='background-color: lightyellow;'>
