@@ -1,20 +1,30 @@
+<?php
+    header("Content-Type: text/html; charset=utf8");
+    include('../../connect.php');
+    mysqli_query($connect,"SET NAMES 'UTF8'");
+    $email = parseurl($_COOKIE['user']);
+
+    function parseurl($url=""){
+        $url = rawurlencode(mb_convert_encoding($url, 'gb2312', 'utf-8'));
+        $a = array("%3A", "%2F", "%40");
+        $b = array(":", "/", "@");
+        $url = str_replace($a, $b, $url);
+        return $url;
+    }
+    
+    $sql = "SELECT * FROM shelter WHERE email = '$email'";
+    $result = mysqli_query($connect,$sql);
+    $text = mysqli_fetch_row($result);
+    $S_Name = $text[1];
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <script>
-        function getCookie(name){
-            var match = document.cookie.match(new RegExp(name+"=([^;]*)"));
-            if(match){
-                return 0;
-            }
-            else{
-                document.cookie = 'href='+location.href;
-                document.write('<meta http-equiv="refresh" content="0; url=../check_in.php">')
-            }
+    <?php
+        if($email == ""){
+            echo "<meta http-equiv='refresh' content='0; url=../check_in.php'>";
         }
-        getCookie("user");
-    </script>
+    ?>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -56,11 +66,9 @@
         <a href="../check_out.php" id="test">&nbsp;登出</a>
         <a href="../../index.html" id="test">回首頁</a>
         
-        <script>
-            var match = document.cookie.match(new RegExp("user"+"=([^;]*)"));
-            var a = match[0].replace(/user=/g, '').replace(/;/g, '').split('%')[0];
-            document.write('<a id="test">HI! '+a+'&nbsp;&nbsp;</a>');
-        </script>
+        <?php
+            echo "<a id=test>HI $S_Name</a>";
+        ?>
         <img class="title" src="S01_shelter_UI/title.png" alt="">
     </nav>
     <main>

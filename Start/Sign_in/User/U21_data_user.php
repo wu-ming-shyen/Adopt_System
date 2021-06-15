@@ -97,7 +97,7 @@
 <body>
     <nav>
         <a href="../check_out.php" id="test" style="text-decoration:none;">&nbsp;登出</a>
-        <a href="U01_user_UI.html" id="test">回首頁</a>
+        <a href="U01_user_UI.php" id="test">回首頁</a>
         <?php
             echo "<a id=test>HI $U_Name</a>";
         ?>

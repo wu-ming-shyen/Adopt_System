@@ -1,7 +1,32 @@
+<?php
+    header("Content-Type: text/html; charset=utf8");
+    include('../../connect.php');
+    mysqli_query($connect,"SET NAMES 'UTF8'");
+    $email = parseurl($_COOKIE['user']);
+
+    function parseurl($url=""){
+        $url = rawurlencode(mb_convert_encoding($url, 'gb2312', 'utf-8'));
+        $a = array("%3A", "%2F", "%40");
+        $b = array(":", "/", "@");
+        $url = str_replace($a, $b, $url);
+        return $url;
+    }
+    
+    $sql = "SELECT * FROM shelter WHERE email = '$email'";
+    $result = mysqli_query($connect,$sql);
+    $text = mysqli_fetch_row($result);
+    $S_Name = $text[1];
+    $S_Phone = $text[4];
+    $S_Address = $text[5];
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <?php
+        if($email == ""){
+            echo "<meta http-equiv='refresh' content='0; url=../check_in.php'>";
+        }
+    ?>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -84,36 +109,15 @@
 <body>
     <nav>
         <a href="../check_out.php" id="test">&nbsp;登出</a>
-        <a href="S01_shelter_UI.html" id="test">回首頁</a>
+        <a href="S01_shelter_UI.php" id="test">回首頁</a>
         
-        <script>
-            var match = document.cookie.match(new RegExp("user"+"=([^;]*)"));
-            var a = match[0].replace(/user=/g, '').replace(/;/g, '').split('%')[0];
-            document.write('<a id="test">HI! '+a+'&nbsp;&nbsp;</a>');
-        </script>
+        <?php
+            echo "<a id=test>HI $S_Name</a>";
+        ?>
         <image src="S01_shelter_UI/title.png" alt="">
         <image src="S01_shelter_UI/S11.png" alt="">
     </nav>
     <main>
-        <?php
-            header("Content-Type: text/html; charset=utf8");
-            include('../../connect.php');
-            mysqli_query($connect,"SET NAMES 'UTF8'");
-            $email = parseurl($_COOKIE['user']);
-
-            function parseurl($url=""){
-                $url = rawurlencode(mb_convert_encoding($url, 'gb2312', 'utf-8'));
-                $a = array("%3A", "%2F", "%40");
-                $b = array(":", "/", "@");
-                $url = str_replace($a, $b, $url);
-                return $url;
-            }
-
-            $shelter="SELECT * FROM `shelter` WHERE `email` = '$email'";
-            $result=mysqli_query($connect,$shelter);
-            $shelter_data=mysqli_fetch_row($result);
-
-        ?>
         <form action="insert_animal.php" method="POST">
             <table align="center" id="table1">
                 <tr>
@@ -160,15 +164,15 @@
                 </tr>
                 <tr>
                     <th>公告收容所:</th>
-                    <?php echo "<td>$shelter_data[1]</td>";?>
+                    <?php echo "<td>$S_Name</td>";?>
                 </tr>
                 <tr>
                     <th>收容所電話:</th>
-                    <?php echo "<td>$shelter_data[4]</td>";?>
+                    <?php echo "<td>$S_Phone</td>";?>
                 </tr>
                 <tr>
                     <th>收容所地址:</th>
-                    <?php echo "<td>$shelter_data[5]</td>";?>
+                    <?php echo "<td>$S_Address</td>";?>
                 </tr>
             </table>
             <input type="submit" value="新增">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

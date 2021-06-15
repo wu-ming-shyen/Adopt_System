@@ -1,7 +1,31 @@
+<?php
+    header("Content-Type: text/html; charset=utf8");
+    include('../../connect.php');
+    mysqli_query($connect,"SET NAMES 'UTF8'");
+    $email = parseurl($_COOKIE['user']);
+
+    function parseurl($url=""){
+        $url = rawurlencode(mb_convert_encoding($url, 'gb2312', 'utf-8'));
+        $a = array("%3A", "%2F", "%40");
+        $b = array(":", "/", "@");
+        $url = str_replace($a, $b, $url);
+        return $url;
+    }
+    
+    $sql = "SELECT * FROM manager WHERE email = '$email'";
+    $result = mysqli_query($connect,$sql);
+    $text = mysqli_fetch_row($result);
+    $M_Name = $text[1];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+    <?php
+        if($email == ""){
+            echo "<meta http-equiv='refresh' content='0; url=../check_in.php'>";
+        }
+    ?>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -84,31 +108,15 @@
 <body>
     <nav>
         <a href="../check_out.php" id="test">&nbsp;登出</a>
-        <a href="M01_manager_UI.html" id="test">回首頁</a>
+        <a href="M01_manager_UI.php" id="test">回首頁</a>
         
-        <script>
-            var match = document.cookie.match(new RegExp("user"+"=([^;]*)"));
-            var a = match[0].replace(/user=/g, '').replace(/;/g, '').split('%')[0];
-            document.write('<a id="test">HI! '+a+'&nbsp;&nbsp;</a>');
-        </script>
+        <?php
+            echo "<a id=test>HI $M_Name</a>";
+        ?>
         <image src="M01_manager_UI/title.png" alt=""><br>
         <image src="M01_manager_UI/M21.png" alt="">
     </nav>
     <main>
-        <?php
-            header("Content-Type: text/html; charset=utf8");
-            include('../../connect.php');
-            mysqli_query($connect,"SET NAMES 'UTF8'");
-            $email = parseurl($_COOKIE['user']);
-
-            function parseurl($url=""){
-                $url = rawurlencode(mb_convert_encoding($url, 'gb2312', 'utf-8'));
-                $a = array("%3A", "%2F", "%40");
-                $b = array(":", "/", "@");
-                $url = str_replace($a, $b, $url);
-                return $url;
-            }
-        ?>
         <select id="option">
             <option>請選擇</option>
             <?php

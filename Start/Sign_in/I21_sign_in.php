@@ -26,7 +26,7 @@
         if($text[0]==$password && $password!=""){
             $_SESSION["admin"] = true;
             $_SESSION["acount"] = $account;
-            echo "<script>document.cookie = 'href='+'User/U01_user_UI.html';</script>";
+            echo "<script>document.cookie = 'href='+'User/U01_user_UI.php';</script>";
             header("refresh:0;url=check_in.php");
         }
         else{
@@ -39,7 +39,7 @@
         if($text[0]==$password && $password!=""){
             $_SESSION["admin"] = true;
             $_SESSION["acount"] = $account;
-            echo "<script>document.cookie = 'href='+'Manager/M01_manager_UI.html';</script>";
+            echo "<script>document.cookie = 'href='+'Manager/M01_manager_UI.php';</script>";
             header("refresh:0;url=check_in.php");
         }
         else{
@@ -52,7 +52,7 @@
         if($text[0]==$password && $password!=""){
             $_SESSION["admin"] = true;
             $_SESSION["acount"] = $account;
-            echo "<script>document.cookie = 'href='+'Shelter/S01_shelter_UI.html';</script>";
+            echo "<script>document.cookie = 'href='+'Shelter/S01_shelter_UI.php';</script>";
             header("refresh:0;url=check_in.php");
         }
         else{

@@ -12,10 +12,10 @@
 
     if(!$result){
         echo "<script>alert('ERROR');</script>";
-        header("refresh:0;url=U01_user_UI.html");
+        header("refresh:0;url=U01_user_UI.php");
     }else{
         echo "<script>alert('申請成功');</script>";
-        header("refresh:0;url=U01_user_UI.html");
+        header("refresh:0;url=U01_user_UI.php");
     }
 
     mysqli_close($connect);
