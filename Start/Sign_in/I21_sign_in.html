@@ -9,6 +9,7 @@
     <style>
         body {
             background-color: papayawhip;
+            text-align: center;
         }
         
         nav {
@@ -28,16 +29,13 @@
         }
         
         .animal2 {
-            float: right;
             margin: 110px;
         }
         
-        main {
+        table {
             font-size: 25px;
             color: rgb(150, 120, 25);
             margin-top: 100px;
-            margin-left: 50px;
-            text-align: center;
         }
         
         input {
@@ -59,21 +57,28 @@
         <img class="animal1" src="I21_sign_in_img/animal1.png" alt="">
         <img class="animal2" src="I21_sign_in_img/animal2.png" alt="">
     </nav>
-    <main>
-        <form action="I21_sign_in.php" method="post">
-            <br>
-            <h1>使用者帳號:</h1>
-            <input type="text" name="U_Account">
-            <h1>使用者密碼:</h1>
-            <input type="password" name="U_Password">
-            <br>
-
-            <input type="submit" onclick="location.href='../Forgot_password/I11_forgot_password.html'" value="忘記密碼">
-            <input type="submit" name="submit" value="登錄">
-            <input type="submit" onclick="location.href='../Sign_up/I31_sign_up.html'" value="註冊">
-        </form>
-        
-    </main>
+    <table align="center" valign="center">
+        <tr>
+            <td valign="bottom">
+                <input type="submit" onclick="location.href='../Sign_up/I31_sign_up.html'" value="註冊">
+            </td>
+            <td>
+                <form action="I21_sign_in.php" method="post">
+                    <br>
+                    <h1>使用者帳號:</h1>
+                    <input type="text" name="U_Account">
+                    <h1>使用者密碼:</h1>
+                    <input type="password" name="U_Password">
+                    <br>
+                    <input type="submit" name="submit" value="登錄">     
+                </form>
+            </td>
+            
+            <td valign="bottom">
+                <input type="submit" onclick="location.href='../Forgot_password/I11_forgot_password.html'" value="忘記密碼">
+            </td>
+        </tr>
+    </table>
 </body>
 
 </html>

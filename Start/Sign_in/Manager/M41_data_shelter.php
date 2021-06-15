@@ -120,6 +120,7 @@
                 <option value="中部">中部</option>
                 <option value="南部">南部</option>
                 <option value="東部">東部</option>
+                <option value="離島">離島</option>
             </select>
             <input type="submit" value="查詢">
         </form>
