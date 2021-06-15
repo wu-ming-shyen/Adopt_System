@@ -7,7 +7,7 @@
     $U_Have = $_POST['U_Have'];
     $U_Salary = $_POST['U_Salary'];
     $U_Address = $_POST['U_Address'];
-    $sql = "INSERT INTO `requisition` (`r_id`, `u_id`, `a_id`, `date`, `squaremeters`, `havinganimals`, `salary`, `address`, `audit`) VALUES (NULL, '$U_ID', '$A_ID', 'current_timestamp()', '$U_Area', '$U_Have', '$U_Salary', '$U_Address', '');";
+    $sql = "INSERT INTO `requisition` (`r_id`, `u_id`, `a_id`, `date`, `squaremeters`, `havinganimals`, `salary`, `address`, `audit`) VALUES (NULL, '$U_ID', '$A_ID', current_timestamp(), '$U_Area', '$U_Have', '$U_Salary', '$U_Address', '');";
     $result = mysqli_query($connect,$sql);
 
     if(!$result){

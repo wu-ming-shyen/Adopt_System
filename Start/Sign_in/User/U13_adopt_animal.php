@@ -3,7 +3,7 @@
     include('../../connect.php');
     mysqli_query($connect,"SET NAMES 'UTF8'");
     $email = parseurl($_COOKIE['user']);
-    $A_ID =  $_POST['a_id'];
+    $A_ID =  $_POST['A_ID'];
     function parseurl($url=""){
         $url = rawurlencode(mb_convert_encoding($url, 'gb2312', 'utf-8'));
         $a = array("%3A", "%2F", "%40");
@@ -95,7 +95,7 @@
 <body>
     <nav>
         <a href="../check_out.php" id="test" style="text-decoration:none;">&nbsp;登出</a>
-        <a href="U01_user_UI.php" id="test">回首頁</a>
+        <a href="U01_user_UI.html" id="test">回首頁</a>
         <?php
             echo "<a id=test>HI $U_Name</a>";
         ?>
