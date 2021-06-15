@@ -8,7 +8,12 @@
     $email = $_POST['U_Email'];
     $password1 = $_POST['U_Password1'];
     $password2 = $_POST['U_Password2'];
-    if($name=="" || $email=="" || $password1=="" || $password2==""){
+    $sex=$_POST['U_sex'];
+    $id_number=$_POST['U_id_number'];
+    $phone=$_POST['U_phone'];
+    $address=$_POST['U_address'];
+    $birthday=$_POST['U_birthday'];
+    if($name=="" || $email=="" || $password1=="" || $password2==""|| $sex=="" || $id_number==""|| $phone=="" || $address=="" || $birthday==""){
         echo"<script>alert('請輸入完整資料');</script>";
         header("refresh:0;url=I31_sign_up.html");
     }
@@ -31,7 +36,7 @@
             header("refresh:0;url=I31_sign_up.html");
         }
         else{
-            $sql = "INSERT INTO `user` (`name`,`email`,`password`) VALUES ('$name','$email','$password1')";
+            $sql = "INSERT INTO `user` (`name`,`email`,`password`,`sex`,`id_number`,`phone`,`address`,`birthday`) VALUES ('$name','$email','$password1','$sex','$id_number','$phone','$address','$birthday')";
             $reslut=mysqli_query($connect,$sql);
             if(!$reslut){
                 echo "<script>alert('註冊失敗(可能帳號已有人使用)');</script>";
