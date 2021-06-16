@@ -48,7 +48,7 @@ if($Password){
         //Content
         $mail->isHTML(true);                                  //Set email format to HTML
         $mail->Subject = 'NPUST animal shelter system';
-        $mail->Body    = '您的密碼是:' . $Password;
+        $mail->Body    = 'Your Password is:' . $Password;
     
         $mail->send();
         echo 'Message has been sent';

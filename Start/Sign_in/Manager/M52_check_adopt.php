@@ -203,11 +203,11 @@
                 </td>
             </tr>
         </table>
-        <form action='Requisition_Update.php' method='POST'>
+        <form action='../../email/M52_check_adopt.php' method='POST'>
             <?php echo "<input type='hidden' value='$R_ID' name='R_ID'>"; ?>
             <?php echo "<input type='Submit' value='Yes' name='R_Audit'>"; ?>
         </form>
-        <form action='Requisition_Update.php' method='POST'>
+        <form action='../../email/M52_check_adopt.php' method='POST'>
             <?php echo "<input type='hidden' value='$R_ID' name='R_ID'>"; ?>
             <?php echo "<input type='Submit' value='No' name='R_Audit'>"; ?>
         </form>

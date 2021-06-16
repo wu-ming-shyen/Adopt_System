@@ -106,6 +106,7 @@
                 include('../../connect.php');
                 mysqli_query($connect,"SET NAMES 'UTF8'");
                 $sql = "SELECT * FROM `favorite` WHERE `u_id` = '$U_ID'";
+                echo "$U_ID";
                 $result = mysqli_query($connect,$sql);
                 for($i=1; $i <= mysqli_num_rows($result);$i++){
                     $text = mysqli_fetch_row($result);

@@ -3,7 +3,7 @@
     include('../../connect.php');
     mysqli_query($connect,"SET NAMES 'UTF8'");
     $email = parseurl($_COOKIE['user']);
-    $A_ID =  $_POST['A_ID'];
+    $A_ID =  $_POST['a_id'];
     function parseurl($url=""){
         $url = rawurlencode(mb_convert_encoding($url, 'gb2312', 'utf-8'));
         $a = array("%3A", "%2F", "%40");
