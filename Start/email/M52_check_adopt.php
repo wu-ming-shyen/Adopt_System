@@ -52,5 +52,5 @@ try {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
 echo "<script>alert('請至信箱收取密碼');</script>";
-header("refresh:0;url=../Sign_in/Manager/M51_list_adopt.php");
+header("refresh:0;url=https://b10856055.ddns.net/Start/Sign_in/Manager/M51_list_adopt.php");
 ?>
