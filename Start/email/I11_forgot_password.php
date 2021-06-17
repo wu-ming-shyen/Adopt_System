@@ -13,15 +13,15 @@ if(mysqli_num_rows($result)>0){
     $Password = $text[3];
 }
 
-$sql = "SELECT * FROM `manager` WHERE `email` LIKE '$email'";
-$result2=mysqli_query($connect,$sql);
+$sql2 = "SELECT * FROM `manager` WHERE `email` LIKE '$email'";
+$result2=mysqli_query($connect,$sql2);
 if(mysqli_num_rows($result2)>0){
     $text = mysqli_fetch_row($result2);
     $Password = $text[3];
 }
 
-$sql = "SELECT * FROM `shelter` WHERE `email` LIKE '$email'";
-$result3=mysqli_query($connect,$sql);
+$sql3 = "SELECT * FROM `shelter` WHERE `email` LIKE '$email'";
+$result3=mysqli_query($connect,$sql3);
 if(mysqli_num_rows($result3)>0){
     $text = mysqli_fetch_row($result3);
     $Password = $text[3];
@@ -56,11 +56,11 @@ if($Password){
         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }
     echo "<script>alert('請至信箱收取密碼');</script>";
-    header("refresh:0;url=../Sign_in/I21_sign_in.html");
+    header("refresh:0;url=https://b10856055.ddns.net/Start/Sign_in/I21_sign_in.html");
 }
 else{
     echo "<script>alert('查無此帳號');</script>";
-    header("refresh:0;url=../Sign_in/I21_sign_in.html");
+    header("refresh:0;url=https://b10856055.ddns.net/Start/Sign_in/I21_sign_in.html");
 }
 
 ?>

@@ -9,8 +9,6 @@ mysqli_query($connect,"SET NAMES 'UTF8'");
 
 $R_ID = $_POST['R_ID'];
 $R_Audit = $_POST['R_Audit'];
-$sql = "UPDATE `requisition` SET `audit` = '$R_Audit' WHERE `requisition`.`r_id` = '$R_ID';";
-$result = mysqli_query($connect,$sql);
 
 $sql = "SELECT * FROM `requisition` Where `r_id`='$R_ID';";
 $result = mysqli_query($connect,$sql);
@@ -51,6 +49,6 @@ try {
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
-echo "<script>alert('請至信箱收取密碼');</script>";
-header("refresh:0;url=../Sign_in/Manager/M51_list_adopt.php");
+echo "<script>alert('審核郵件已寄出!');</script>";
+header("refresh:0;url=https://b10856055.ddns.net/Start/Sign_in/Manager/M51_list_adopt.php");
 ?>
